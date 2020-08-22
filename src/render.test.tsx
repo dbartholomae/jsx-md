@@ -11,4 +11,12 @@ describe('render', () => {
   it('renders a text component to its content', async () => {
     expect(<Text>Content</Text>).toEqual('Content')
   })
+
+  it('renders a functional component to its content', async () => {
+    function TestComponent () {
+      return <Text>Content</Text>
+    }
+
+    expect(<TestComponent />).toEqual('Content')
+  })
 })

@@ -1,1 +1,4 @@
-export * from './create-file'
+import { render } from './render'
+
+export * from './Text'
+export default render

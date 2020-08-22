@@ -19,9 +19,7 @@
   "repository": "git@github.com:dbartholomae/jsx-md.git",
   "devDependencies": {
     "@types/jest": "^26.0.10",
-    "@types/mock-fs": "^4.10.0",
     "jest": "^26.4.2",
-    "mock-fs": "^4.13.0",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.2.0",
     "tslib": "^2.0.1",

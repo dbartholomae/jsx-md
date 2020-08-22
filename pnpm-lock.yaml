@@ -1,8 +1,6 @@
 devDependencies:
   '@types/jest': 26.0.10
-  '@types/mock-fs': 4.10.0
   jest: 26.4.2
-  mock-fs: 4.13.0
   rimraf: 3.0.2
   ts-jest: 26.2.0_jest@26.4.2+typescript@4.0.2
   tslib: 2.0.1
@@ -578,12 +576,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-i2m0oyh8w/Lum7wWK/YOZJakYF8Mx08UaKA1CtbmFeDquVhAEdA7znacsVSf2hJ1OQ/OfVMGN90pw/AtzF8s/Q==
-  /@types/mock-fs/4.10.0:
-    dependencies:
-      '@types/node': 14.6.0
-    dev: true
-    resolution:
-      integrity: sha512-FQ5alSzmHMmliqcL36JqIA4Yyn9jyJKvRSGV3mvPh108VFatX7naJDzSG4fnFQNZFq9dIx0Dzoe6ddflMB2Xkg==
   /@types/node/14.6.0:
     dev: true
     resolution:
@@ -2652,10 +2644,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
-  /mock-fs/4.13.0:
-    dev: true
-    resolution:
-      integrity: sha512-DD0vOdofJdoaRNtnWcrXe6RQbpHkPPmtqGq14uRX0F8ZKJ5nv89CVTYl/BZdppDxBDaV0hl75htg3abpEWlPZA==
   /ms/2.0.0:
     dev: true
     resolution:
@@ -3896,9 +3884,7 @@ packages:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
 specifiers:
   '@types/jest': ^26.0.10
-  '@types/mock-fs': ^4.10.0
   jest: ^26.4.2
-  mock-fs: ^4.13.0
   rimraf: ^3.0.2
   ts-jest: ^26.2.0
   tslib: ^2.0.1

@@ -3,6 +3,7 @@ devDependencies:
   '@types/mock-fs': 4.10.0
   jest: 26.4.2
   mock-fs: 4.13.0
+  rimraf: 3.0.2
   ts-jest: 26.2.0_jest@26.4.2+typescript@4.0.2
   tslib: 2.0.1
   typescript: 4.0.2
@@ -3898,6 +3899,7 @@ specifiers:
   '@types/mock-fs': ^4.10.0
   jest: ^26.4.2
   mock-fs: ^4.13.0
+  rimraf: ^3.0.2
   ts-jest: ^26.2.0
   tslib: ^2.0.1
   typescript: ^4.0.2

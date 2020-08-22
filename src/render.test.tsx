@@ -1,7 +1,14 @@
+/* @jsx render */
+
 import { render } from './render'
+import { Text } from './Text'
 
 describe('render', () => {
-  it('returns an empty string for an empty array', () => {
-    expect(render([])).toEqual('')
+  it('renders a text node to its content', async () => {
+    expect(<md-text>Content</md-text>).toEqual('Content')
+  })
+
+  it('renders a text component to its content', async () => {
+    expect(<Text>Content</Text>).toEqual('Content')
   })
 })

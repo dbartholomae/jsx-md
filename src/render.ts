@@ -1,5 +1,3 @@
-import type { ReactNode } from 'react'
-
-export function render (node: ReactNode): string {
-  return ''
+export function render (nodeType: string, attributes: null, children: string): string {
+  return children
 }

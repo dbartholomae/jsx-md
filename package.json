@@ -1,0 +1,23 @@
+{
+  "name": "jsx-md",
+  "version": "1.0.0",
+  "description": "Generate markdown files with a React-like syntax.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "Markdown",
+    "generator",
+    "React",
+    "JSX",
+    "MD",
+    "Readme"
+  ],
+  "author": "Daniel Bartholomae (daniel@bartholomae.name)",
+  "license": "MIT",
+  "repository": "git@github.com:dbartholomae/jsx-md.git",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}

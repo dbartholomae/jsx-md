@@ -28,4 +28,11 @@ describe('render', () => {
   it('renders a text node with multiple children to its content', () => {
     expect(<md-text>{'More'} {'Content'}</md-text>).toEqual('More Content')
   })
+
+  it('renders a functional component with an attribute', () => {
+    function Component({ attribute }: { attribute: string }) {
+      return <md-text>{attribute}</md-text>
+    }
+    expect(<Component attribute='Test' />).toEqual('Test')
+  })
 })

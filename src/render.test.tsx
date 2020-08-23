@@ -1,7 +1,7 @@
 /* @jsx render */
 
 import { render } from './render'
-import { Text } from './Text'
+import { Text } from './elements'
 
 describe('render', () => {
   it('renders a text node to its content', async () => {

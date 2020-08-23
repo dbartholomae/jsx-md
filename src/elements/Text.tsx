@@ -1,6 +1,6 @@
 /* @jsx render */
 
-import { render } from './render'
+import { render } from '../render'
 
 type Props = { children?: string | number }
 

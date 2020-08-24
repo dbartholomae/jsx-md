@@ -9,14 +9,14 @@ describe('render', () => {
 
   it('renders a nested component to its content', () => {
     function Text ({ children }: { children?: string }) {
-      return children
+      return <md-text>{children}</md-text>
     }
     expect(<Text>Content</Text>).toBe('Content')
   })
 
   it('renders a functional component to its content', () => {
     function Text ({ children }: { children?: string }) {
-      return children
+      return <md-text>{children}</md-text>
     }
     function TestComponent () {
       return <Text>Content</Text>

@@ -6,7 +6,7 @@ export function render(functionalComponent: (props: Props) => string, attributes
 export function render (nodeType: string, attributes: null, children: string): string
 export function render (typeOrComponent: string | ((props: Props) => string), attributes: null, ...children: string[]): string {
   if (typeof typeOrComponent === 'function') {
-    return typeOrComponent({ ...(attributes ?? {}), children: children.join('') })
+    return typeOrComponent({ ...(attributes ?? {}), children })
   }
   return children.join('')
 }

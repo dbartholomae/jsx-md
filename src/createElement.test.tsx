@@ -1,8 +1,7 @@
-/* @jsx render */
+/* @jsx createElement */
+import { createElement } from './createElement'
 
-import { render } from './render'
-
-describe('render', () => {
+describe('createElement', () => {
   it('renders a text node to its content', () => {
     expect(<md-text>Content</md-text>).toBe('Content')
   })
@@ -33,6 +32,6 @@ describe('render', () => {
     function Component({ attribute }: { attribute: string }) {
       return <md-text>{attribute}</md-text>
     }
-    expect(<Component attribute='Test' />).toEqual('Test')
+    expect(<Component attribute='Test' />).toBe('Test')
   })
 })

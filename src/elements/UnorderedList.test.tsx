@@ -1,6 +1,6 @@
-/* @jsx render */
+/* @jsx MD */
+import MD from '..'
 
-import { render } from '../render'
 import { UnorderedList } from '.'
 
 describe('UnorderedList', () => {

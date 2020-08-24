@@ -1,4 +1,4 @@
-import { render } from './render'
+import { createElement } from './createElement'
 
 export * from './elements'
-export default render
+export default createElement

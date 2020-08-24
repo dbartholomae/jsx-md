@@ -5,7 +5,7 @@ import { Emphasis } from '.'
 
 describe('Emphasis', () => {
   it('returns the wrapped content', () => {
-    expect(<Emphasis>Test</Emphasis>).toEqual('*Test*')
+    expect(<Emphasis>Test</Emphasis>).toEqual('_Test_')
   })
 
   it('strongly returns the wrapped content', () => {

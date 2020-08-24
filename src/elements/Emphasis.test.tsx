@@ -1,14 +1,14 @@
 /* @jsx MD */
-import MD from '..'
+import MD, { render } from '..'
 
 import { Emphasis } from '.'
 
 describe('Emphasis', () => {
   it('returns the wrapped content', () => {
-    expect(<Emphasis>Test</Emphasis>).toBe('_Test_')
+    expect(render(<Emphasis>Test</Emphasis>)).toBe('_Test_')
   })
 
   it('strongly returns the wrapped content', () => {
-    expect(<Emphasis strong>Test</Emphasis>).toBe('**Test**')
+    expect(render(<Emphasis strong>Test</Emphasis>)).toBe('**Test**')
   })
 })

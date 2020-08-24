@@ -1,10 +1,10 @@
 /* @jsx MD */
-import MD from '..'
+import MD, { render } from '..'
 
 import { CodeBlock } from '.'
 
 describe('CodeBlock', () => {
   it('returns the wrapped content', () => {
-    expect(<CodeBlock>Test</CodeBlock>).toBe('```Test```')
+    expect(render(<CodeBlock>Test</CodeBlock>)).toBe('```Test```')
   })
 })

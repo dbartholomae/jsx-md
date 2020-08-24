@@ -1,10 +1,10 @@
 /* @jsx MD */
-import MD from '..'
+import MD, { render } from '..'
 
 import { Text } from '.'
 
 describe('Text', () => {
   it('renders to the children', () => {
-    expect(<Text>Test</Text>).toBe('Test')
+    expect(render(<Text>Test</Text>)).toBe('Test')
   })
 })

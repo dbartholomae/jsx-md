@@ -2,6 +2,9 @@
 
 import { render } from '../render'
 
-export function Emphasis({ children }: { children?: string }) {
-  return <md-text>*{children}*</md-text>
+type Type = { children?: string, strong?: boolean }
+
+export function Emphasis({ children, strong }: Type) {
+  let marker = strong ? '**' : '*'
+  return <md-text>{marker}{children}{marker}</md-text>
 }

@@ -1,6 +1,11 @@
-export function UnorderedList ({ children }: { children?: string[] }) {
+/* @jsx MD */
+import MD from '..'
+
+type Props = { children?: string[] }
+
+export function UnorderedList ({ children }: Props) {
   if (children === undefined) {
     return undefined
   }
-  return children.map(child => `* ${child}`).join('\n')
+  return <md-text>{children.map(child => `* ${child}`).join('\n')}</md-text>
 }

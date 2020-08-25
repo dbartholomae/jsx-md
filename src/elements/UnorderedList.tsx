@@ -1,11 +1,12 @@
 /* @jsx MD */
 import MD from '..'
+import { TextNode } from '../dom'
 
-type Props = { children?: string[] }
+type Props = { children?: TextNode[] }
 
 export function UnorderedList ({ children }: Props) {
   if (children === undefined) {
     return undefined
   }
-  return <md-text>{children.map(child => `* ${child}`).join('\n')}</md-text>
+  return children.map(child => <md-raw><md-raw>* </md-raw>{child}{'\n'}</md-raw>)
 }

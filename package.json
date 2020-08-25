@@ -7,6 +7,9 @@
     "build": "rimraf lib && tsc -p tsconfig.build.json",
     "test": "jest"
   },
+  "engines": {
+    "node": ">=12.4.0"
+  },
   "keywords": [
     "Markdown",
     "generator",

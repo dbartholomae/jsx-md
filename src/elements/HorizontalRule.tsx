@@ -1,6 +1,10 @@
 /* @jsx MD */
-import MD from '..'
+import MD from "..";
 
-export function HorizontalRule () {
-  return <md-text>{'\n'}---{'\n'}</md-text>
+export function HorizontalRule() {
+  return (
+    <md-text>
+      {"\n"}---{"\n"}
+    </md-text>
+  );
 }

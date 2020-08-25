@@ -1,10 +1,10 @@
 /* @jsx MD */
-import MD, { render } from '..'
+import MD, { render } from "..";
 
-import { HorizontalRule } from '.'
+import { HorizontalRule } from ".";
 
-describe('Horizontal Rule', () => {
-  it('returns --- with empty lines', () => {
-    expect(render(<HorizontalRule />)).toBe('\n---\n')
-  })
-})
+describe("Horizontal Rule", () => {
+  it("returns --- with empty lines", () => {
+    expect(render(<HorizontalRule />)).toBe("\n---\n");
+  });
+});

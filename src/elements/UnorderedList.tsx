@@ -10,8 +10,7 @@ export function UnorderedList({ children }: Props) {
   }
   return children.map((child) => (
     <md-raw>
-      <md-raw>* </md-raw>
-      {child}
+      * {child}
       {"\n"}
     </md-raw>
   ));

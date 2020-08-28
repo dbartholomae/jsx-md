@@ -1,8 +1,8 @@
 /* @jsx MD */
-import MD from "..";
+import MD, { Fragment } from "..";
 
 type Props = { children?: string };
 
 export function CodeBlock({ children }: Props) {
-  return <md-text>```{children}```</md-text>;
+  return <Fragment>```{children}```</Fragment>;
 }

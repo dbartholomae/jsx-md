@@ -1,8 +1,7 @@
-/* @jsx MD */
-import MD from "..";
+import { Markdown } from "../model";
 
-type Props = { children?: string | number };
+type Props = { children?: Markdown };
 
-export function Text({ children }: Props) {
-  return <md-text>{children}</md-text>;
+export function Text({ children }: Props): Markdown {
+  return children;
 }

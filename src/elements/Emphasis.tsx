@@ -1,15 +1,15 @@
 /* @jsx MD */
-import MD from "..";
+import MD, { Fragment } from "..";
 
-type Type = { children?: string; strong?: boolean };
+type Props = { children?: string; strong?: boolean };
 
-export function Emphasis({ children, strong }: Type) {
+export function Emphasis({ children, strong }: Props) {
   let marker = strong ? "**" : "_";
   return (
-    <md-text>
+    <Fragment>
       {marker}
       {children}
       {marker}
-    </md-text>
+    </Fragment>
   );
 }

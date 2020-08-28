@@ -1,10 +1,10 @@
 /* @jsx MD */
-import MD from "..";
+import MD, { Fragment } from "..";
 
 export function HorizontalRule() {
   return (
-    <md-text>
+    <Fragment>
       {"\n"}---{"\n"}
-    </md-text>
+    </Fragment>
   );
 }

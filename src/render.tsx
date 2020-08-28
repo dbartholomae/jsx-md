@@ -1,6 +1,8 @@
-export function render(element: string | string[]): string {
+import { Markdown } from "./model";
+
+export function render(element: Markdown | Markdown[]): string {
   if (Array.isArray(element)) {
     return element.join("");
   }
-  return element;
+  return element.toString();
 }

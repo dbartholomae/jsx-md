@@ -1,27 +1,25 @@
-type Props = {
-  [key: string]: any;
-};
+import { Component, Markdown } from "./model";
 
 export function createElement(
-  functionalComponent: (props: Props) => string,
-  attributes: null
-): string;
+  component: Component,
+  attributes: {} | null,
+  ...children: Markdown[]
+): Markdown;
 export function createElement(
   nodeType: string,
   attributes: null,
-  children: string
-): string;
+  ...children: Markdown[]
+): Markdown;
 export function createElement(
-  typeOrComponent: string | ((props: Props) => string),
-  attributes: null,
-  ...children: string[]
-): string {
+  typeOrComponent: string | Component,
+  attributes: {} | null,
+  ...children: Markdown[]
+): Markdown {
   if (typeof typeOrComponent === "function") {
-    const componentResult = typeOrComponent({
+    return typeOrComponent({
       ...(attributes ?? {}),
-      children,
+      children: children.length === 1 ? children[0] : children,
     });
-    return componentResult;
   }
   return children.join("");
 }

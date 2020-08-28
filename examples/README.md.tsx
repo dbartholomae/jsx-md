@@ -7,8 +7,8 @@ function Readme() {
   return (
     <Fragment>
       <Heading level={1}>{pkg.name}</Heading>
-      <LineBreak />
       <Text>{pkg.description}</Text>
+      <LineBreak />
     </Fragment>
   );
 }

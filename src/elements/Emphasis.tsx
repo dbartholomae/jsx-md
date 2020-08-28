@@ -1,10 +1,10 @@
 /* @jsx MD */
-import MD, { Fragment } from "..";
+import MD, { Component, Fragment } from "..";
 
 type Props = { children?: string; strong?: boolean };
 
-export function Emphasis({ children, strong }: Props) {
-  let marker = strong ? "**" : "_";
+export const Emphasis: Component<Props> = ({ children, strong }) => {
+  const marker = strong ? "**" : "_";
   return (
     <Fragment>
       {marker}
@@ -12,4 +12,4 @@ export function Emphasis({ children, strong }: Props) {
       {marker}
     </Fragment>
   );
-}
+};

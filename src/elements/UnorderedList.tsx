@@ -1,11 +1,11 @@
 /* @jsx MD */
-import MD, { Fragment } from "..";
+import MD, { Component, Fragment } from "..";
 
 type Props = { children?: string[] };
 
-export function UnorderedList({ children }: Props) {
+export const UnorderedList: Component<Props> = ({ children }) => {
   if (children === undefined) {
     return undefined;
   }
   return <Fragment>{children.map((child) => `* ${child}\n`)}</Fragment>;
-}
+};

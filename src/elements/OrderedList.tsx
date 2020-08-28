@@ -1,9 +1,9 @@
 /* @jsx MD */
-import MD, { Fragment } from "..";
+import MD, { Component, Fragment } from "..";
 
 type Props = { children?: string[] };
 
-export function OrderedList({ children }: Props) {
+export const OrderedList: Component<Props> = ({ children }) => {
   if (children === undefined) {
     return undefined;
   }
@@ -12,4 +12,4 @@ export function OrderedList({ children }: Props) {
       {children.map((child, index) => `${index + 1}. ${child}\n`)}
     </Fragment>
   );
-}
+};

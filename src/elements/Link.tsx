@@ -1,18 +1,16 @@
 /* @jsx MD */
-import MD, { Fragment, Markdown } from "..";
+import MD, { Component, Fragment, Markdown } from "..";
 
 type Props = { children?: Markdown | Markdown[]; to: string; title?: string };
 
-export function Link({ children, to, title }: Props): Markdown | Markdown[] {
-  return (
-    <Fragment>
-      {"["}
-      {children}
-      {"]"}
-      {"("}
-      {to}
-      {title ? ` "${title}"` : null}
-      {")"}
-    </Fragment>
-  );
-}
+export const Link: Component<Props> = ({ children, to, title }) => (
+  <Fragment>
+    {"["}
+    {children}
+    {"]"}
+    {"("}
+    {to}
+    {title ? ` "${title}"` : null}
+    {")"}
+  </Fragment>
+);

@@ -1,20 +1,15 @@
 /* @jsx MD */
-import MD, { Fragment, Markdown } from "..";
+import MD, { Component, Fragment, Markdown } from "..";
 
 type Props = { children?: Markdown | Markdown[]; reference: string };
 
-export function ReferenceImage({
-  children,
-  reference,
-}: Props): Markdown | Markdown[] {
-  return (
-    <Fragment>
-      {"!["}
-      {children}
-      {"]"}
-      {"["}
-      {reference}
-      {"]"}
-    </Fragment>
-  );
-}
+export const ReferenceImage: Component<Props> = ({ children, reference }) => (
+  <Fragment>
+    {"!["}
+    {children}
+    {"]"}
+    {"["}
+    {reference}
+    {"]"}
+  </Fragment>
+);

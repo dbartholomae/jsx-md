@@ -1,6 +1,4 @@
 /* @jsx MD */
-import MD, { Fragment } from "..";
+import MD, { Component, Fragment } from "..";
 
-export function LineBreak() {
-  return <Fragment>{"\n"}</Fragment>;
-}
+export const LineBreak: Component = () => <Fragment>{"\n"}</Fragment>;

@@ -1,5 +1,5 @@
 /* @jsx MD */
-import MD, { render } from "..";
+import MD, { Component, render } from "..";
 
 import { UnorderedList } from ".";
 
@@ -20,15 +20,14 @@ describe("UnorderedList", () => {
   });
 
   it("wraps nested components", () => {
-    function Component({ children }: { children?: string }) {
-      return children;
-    }
+    type Props = { children?: string };
+    const TestComponent: Component<Props> = ({ children }) => children;
     expect(
       render(
         <UnorderedList>
-          <Component>a</Component>
-          <Component>b</Component>
-          <Component>c</Component>
+          <TestComponent>a</TestComponent>
+          <TestComponent>b</TestComponent>
+          <TestComponent>c</TestComponent>
         </UnorderedList>
       )
     ).toBe(`* a

@@ -1,8 +1,9 @@
 /* @jsx MD */
-import MD, { render } from "..";
+import MD, { Component, render } from "..";
 
 import { OrderedList } from ".";
 
+type Props = { children?: string };
 describe("OrderedList", () => {
   it("wraps each child with a linebreak and a continuosly increasing number", () => {
     expect(
@@ -20,15 +21,14 @@ describe("OrderedList", () => {
   });
 
   it("wraps nested components", () => {
-    function Component({ children }: { children?: string }) {
-      return children;
-    }
+    const TestComponent: Component<Props> = ({ children }) => children;
+
     expect(
       render(
         <OrderedList>
-          <Component>a</Component>
-          <Component>b</Component>
-          <Component>c</Component>
+          <TestComponent>a</TestComponent>
+          <TestComponent>b</TestComponent>
+          <TestComponent>c</TestComponent>
         </OrderedList>
       )
     ).toBe(`1. a

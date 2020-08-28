@@ -1,9 +1,9 @@
 /* @jsx MD */
-import MD, { Fragment, Markdown } from "..";
+import MD, { Component, Fragment, Markdown } from "..";
 
 type Props = { children?: Markdown | Markdown[] };
 
-export function BlockQuote({ children }: Props) {
+export const BlockQuote: Component<Props> = ({ children }) => {
   if (children === undefined) {
     return undefined;
   }
@@ -23,4 +23,4 @@ export function BlockQuote({ children }: Props) {
       {"\n"}
     </Fragment>
   );
-}
+};

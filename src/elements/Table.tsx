@@ -1,5 +1,5 @@
 /* @jsx MD */
-import MD, { Fragment } from "..";
+import MD, { Component, Fragment } from "..";
 
 type KeyedHashMap<Keys extends string, Value> = { [key in Keys]: Value };
 type Props<Headers extends string> = {
@@ -15,7 +15,7 @@ function renderRow<Headers extends string>(
     .join("");
 }
 
-function renderSeparator(columnWidths: number[]) {
+function renderSeparator(columnWidths: number[]): string {
   return columnWidths
     .map((width: number) => ` ${"-".repeat(width)} |`)
     .join("");
@@ -24,8 +24,8 @@ function renderSeparator(columnWidths: number[]) {
 export function Table<Headers extends string>({
   body,
   headers,
-}: Props<Headers>) {
-  let columnWidths = Object.values(headers).map(
+}: Props<Headers>): ReturnType<Component<Props<Headers>>> {
+  const columnWidths = Object.values(headers).map(
     (header: string) => header.length
   );
   return (

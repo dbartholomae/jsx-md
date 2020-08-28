@@ -1,10 +1,6 @@
-import { Markdown } from "../model";
+import { Component, Markdown } from "../model";
 
 type Props = { children?: Markdown | Markdown[] };
 
-export function Fragment({ children }: Props) {
-  if (Array.isArray(children)) {
-    return children.join("");
-  }
-  return children;
-}
+export const Fragment: Component<Props> = ({ children }) =>
+  Array.isArray(children) ? children.join("") : children;

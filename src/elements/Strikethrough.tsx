@@ -1,14 +1,12 @@
 /* @jsx MD */
-import MD, { Fragment, Markdown } from "..";
+import MD, { Component, Fragment, Markdown } from "..";
 
 type Props = { children?: Markdown | Markdown[] };
 
-export function Strikethrough({ children }: Props): Markdown | Markdown[] {
-  return (
-    <Fragment>
-      {"~~"}
-      {children}
-      {"~~"}
-    </Fragment>
-  );
-}
+export const Strikethrough: Component<Props> = ({ children }) => (
+  <Fragment>
+    {"~~"}
+    {children}
+    {"~~"}
+  </Fragment>
+);

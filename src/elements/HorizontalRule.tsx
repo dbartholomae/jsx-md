@@ -1,10 +1,8 @@
 /* @jsx MD */
-import MD, { Fragment } from "..";
+import MD, { Component, Fragment } from "..";
 
-export function HorizontalRule() {
-  return (
-    <Fragment>
-      {"\n"}---{"\n"}
-    </Fragment>
-  );
-}
+export const HorizontalRule: Component = () => (
+  <Fragment>
+    {"\n"}---{"\n"}
+  </Fragment>
+);

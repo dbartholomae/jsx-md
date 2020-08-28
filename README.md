@@ -18,19 +18,17 @@ Generate markdown files with a React\-like syntax.
 // functions from jsx-md
 /* @jsx MD */
 /* @jsxFrag Fragment */
-import MD, { Fragment, Heading, LineBreak, render, Text } from "jsx-md";
+import MD, { Component, Fragment, Heading, LineBreak, render, Text } from "jsx-md";
 import { writeFileSync } from "fs";
 import pkg from "./package.json";
 
-function Readme() {
-  return (
-    <>
-      <Heading level={1}>{pkg.name}</Heading>
-      <Text>{pkg.description}</Text>
-      <LineBreak />
-    </>
-  );
-}
+const Readme: Component = () => (
+  <>
+    <Heading level={1}>{pkg.name}</Heading>
+    <Text>{pkg.description}</Text>
+    <LineBreak />
+  </>
+);
 
 // Currently, the rendering function is not always necessary.
 // This might change in the future, though, so do not rely on any

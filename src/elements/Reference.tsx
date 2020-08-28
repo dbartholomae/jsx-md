@@ -1,5 +1,5 @@
 /* @jsx MD */
-import MD, { Fragment, Markdown } from "..";
+import MD, { Component, Fragment, Markdown } from "..";
 
 type Props = {
   children?: Markdown | Markdown[];
@@ -7,19 +7,13 @@ type Props = {
   title?: string;
 };
 
-export function Reference({
-  children,
-  label,
-  title,
-}: Props): Markdown | Markdown[] {
-  return (
-    <Fragment>
-      {"\n["}
-      {label}
-      {"]: "}
-      {children}
-      {title ? ` "${title}"` : null}
-      {"\n"}
-    </Fragment>
-  );
-}
+export const Reference: Component<Props> = ({ children, label, title }) => (
+  <Fragment>
+    {"\n["}
+    {label}
+    {"]: "}
+    {children}
+    {title ? ` "${title}"` : null}
+    {"\n"}
+  </Fragment>
+);

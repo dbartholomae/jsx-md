@@ -10,6 +10,7 @@ export function Heading({ children, level }: Props) {
   return (
     <Fragment>
       {"#".repeat(level)} {children}
+      {"\n\n"}
     </Fragment>
   );
 }

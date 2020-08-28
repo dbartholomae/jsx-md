@@ -8,6 +8,7 @@ export { Link } from "./Link";
 export { OrderedList } from "./OrderedList";
 export { Strikethrough } from "./Strikethrough";
 export { Reference } from "./Reference";
+export { ReferenceImage } from "./ReferenceImage";
 export { ReferenceLink } from "./ReferenceLink";
 export { Text } from "./Text";
 export { UnorderedList } from "./UnorderedList";

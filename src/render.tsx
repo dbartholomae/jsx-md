@@ -1,8 +1,6 @@
-import { TextNode } from "./dom";
-
-export function render(element: TextNode | TextNode[]): string {
+export function render(element: string | string[]): string {
   if (Array.isArray(element)) {
-    return element.map((el) => el.nodeValue).join("");
+    return element.join("");
   }
-  return element.nodeValue;
+  return element;
 }

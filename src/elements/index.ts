@@ -3,6 +3,7 @@ export { Emphasis } from "./Emphasis";
 export { Fragment } from "./Fragment";
 export { Heading } from "./Heading";
 export { HorizontalRule } from "./HorizontalRule";
+export { Image } from "./Image";
 export { Link } from "./Link";
 export { OrderedList } from "./OrderedList";
 export { Strikethrough } from "./Strikethrough";

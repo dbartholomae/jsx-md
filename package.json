@@ -11,6 +11,9 @@
   "engines": {
     "node": ">=12.4.0"
   },
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "Markdown",
     "generator",

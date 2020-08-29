@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rimraf lib && tsc -p tsconfig.build.json",
     "lint": "eslint src/**/*.ts src/**/*.tsx examples/**/*.tsx",
-    "test": "jest"
+    "test": "jest && pkg-ok"
   },
   "engines": {
     "node": ">=12.4.0"
@@ -34,6 +34,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.20.6",
     "jest": "^26.4.2",
+    "pkg-ok": "^2.3.1",
     "prettier": "^2.1.0",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.2.0",

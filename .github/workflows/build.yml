@@ -59,4 +59,10 @@ jobs:
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     - name: publish
-      run: npm publish --set-access-level public
+      uses: cycjimmy/semantic-release-action@v2
+      with:
+        semantic_version: 17
+        branches: main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

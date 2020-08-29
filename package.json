@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Generate markdown files with a React-like syntax.",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "rimraf lib && tsc -p tsconfig.build.json",
     "lint": "eslint src/**/*.ts src/**/*.tsx examples/**/*.tsx",

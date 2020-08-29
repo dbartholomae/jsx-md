@@ -11,6 +11,13 @@ describe("render", () => {
     expect(render("Content")).toBe("Content");
   });
 
+  it("throws an error if a lower-case component is used", () => {
+    // @ts-expect-error
+    expect(() => render(<test>Test</test>)).toThrowError(
+      "No lower-case elements or class components supported, please make sure all your components start with an upper-case letter and are functions."
+    );
+  });
+
   it("renders a nested component to its content", () => {
     expect(render(<Text>Content</Text>)).toBe("Content");
   });

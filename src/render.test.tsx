@@ -7,6 +7,10 @@ type TextProps = { children?: string };
 const Text: Component<TextProps> = ({ children }) => children;
 
 describe("render", () => {
+  it("returns '' if element is undefined", () => {
+    expect(render(undefined)).toBe("");
+  });
+
   it("renders a string to itself", () => {
     expect(render("Content")).toBe("Content");
   });

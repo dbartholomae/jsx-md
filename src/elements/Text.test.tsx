@@ -8,6 +8,10 @@ describe("Text", () => {
     expect(render(<Text>Test</Text>)).toBe("Test");
   });
 
+  it("renders correctly with some children being null", () => {
+    expect(render(<Text>Test{null}</Text>)).toBe("Test");
+  });
+
   it.each([
     "\\",
     "`",

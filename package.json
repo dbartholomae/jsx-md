@@ -1,6 +1,6 @@
 {
   "name": "jsx-md",
-  "version": "1.0.0",
+  "version": "0.0.0-semantic-release",
   "description": "Generate markdown files with a React-like syntax.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

@@ -29,8 +29,8 @@ const Readme: Component = () => (
       </Image>
     </Link>
     <LineBreak />
-    <Link to="https://github.com/dbartholomae/jsx-md/actions?query=workflow%3A.github%2Fworkflows%2Fbuild.yml">
-      <Image src="https://github.com/dbartholomae/jsx-md/workflows/.github/workflows/build.yml/badge.svg?branch=main">
+    <Link to='https://github.com/dbartholomae/jsx-md/actions?query=workflow%3A"Build+and+deploy"'>
+      <Image src="https://github.com/dbartholomae/jsx-md/workflows/Build%20and%20deploy/badge.svg?branch=main">
         build status
       </Image>
     </Link>

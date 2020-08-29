@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/jsx-md.svg)](https://npmjs.org/package/jsx-md)
 [![downloads](https://img.shields.io/npm/dw/jsx-md.svg)](https://npmjs.org/package/jsx-md)
 [![open issues](https://img.shields.io/github/issues-raw/dbartholomae/jsx-md.svg)](https://github.com/dbartholomae/jsx-md/issues)
-[![build status](https://github.com/dbartholomae/jsx-md/workflows/.github/workflows/build.yml/badge.svg?branch=main)](https://github.com/dbartholomae/jsx-md/actions?query=workflow%3A.github%2Fworkflows%2Fbuild.yml)
+[![build status](https://github.com/dbartholomae/jsx-md/workflows/Build%20and%20deploy/badge.svg?branch=main)](https://github.com/dbartholomae/jsx-md/actions?query=workflow%3A"Build+and+deploy")
 [![codecov](https://codecov.io/gh/dbartholomae/jsx-md/branch/main/graph/badge.svg)](https://codecov.io/gh/dbartholomae/jsx-md)
 [![dependency status](https://david-dm.org/dbartholomae/jsx-md.svg?theme=shields.io)](https://david-dm.org/dbartholomae/jsx-md)
 [![devDependency status](https://david-dm.org/dbartholomae/jsx-md/dev-status.svg)](https://david-dm.org/dbartholomae/jsx-md?type=dev)

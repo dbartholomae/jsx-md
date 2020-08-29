@@ -16,7 +16,7 @@ describe("render", () => {
   });
 
   it("throws an error if a lower-case component is used", () => {
-    // @ts-expect-error
+    // @ts-expect-error - lower-case element test does not exist
     expect(() => render(<test>Test</test>)).toThrowError(
       "No lower-case elements or class components supported, please make sure all your components start with an upper-case letter and are functions."
     );

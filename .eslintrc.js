@@ -15,5 +15,9 @@ module.exports = {
   },
   rules: {
     "react/prop-types": 0,
+    "@typescript-eslint/ban-ts-comment": [
+      2,
+      { "ts-expect-error": "allow-with-description" },
+    ],
   },
 };

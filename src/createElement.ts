@@ -2,7 +2,7 @@ import { Component, Markdown } from "./model";
 
 export function createElement(
   component: Component,
-  attributes: {} | null,
+  attributes: Record<string, unknown> | null,
   ...children: Markdown[]
 ): Markdown | Markdown[];
 export function createElement(
@@ -12,7 +12,7 @@ export function createElement(
 ): Markdown | Markdown[];
 export function createElement(
   typeOrComponent: string | Component,
-  attributes: {} | null,
+  attributes: Record<string, unknown> | null,
   ...children: Markdown[]
 ): Markdown | Markdown[] {
   if (typeof typeOrComponent !== "function") {

@@ -8,7 +8,7 @@
 [![dependency status](https://david-dm.org/dbartholomae/jsx-md.svg?theme=shields.io)](https://david-dm.org/dbartholomae/jsx-md)
 [![devDependency status](https://david-dm.org/dbartholomae/jsx-md/dev-status.svg)](https://david-dm.org/dbartholomae/jsx-md?type=dev)
 
-Generate markdown files with a React\-like syntax.
+Generate markdown files with a React\-like syntax\.
 
 ## Usage
 

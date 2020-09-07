@@ -4,10 +4,6 @@ import MD, { Component, render } from "..";
 import { Text, UnorderedList } from ".";
 
 describe("UnorderedList", () => {
-  it("returns '' if no children are set", () => {
-    expect(render(<UnorderedList />)).toBe("");
-  });
-
   it("wraps each child with a linebreak and a *", () => {
     expect(
       render(

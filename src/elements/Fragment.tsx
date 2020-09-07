@@ -1,10 +1,6 @@
 /* @jsx MD */
-import MD, { Component, MarkdownChildren } from "..";
+import MD, { Component, PropsWithChildren } from "..";
 
-interface Props {
-  children: MarkdownChildren;
-}
-
-export const Fragment: Component<Props> = ({ children }) => (
+export const Fragment: Component<PropsWithChildren> = ({ children }) => (
   <mdFragment>{children}</mdFragment>
 );

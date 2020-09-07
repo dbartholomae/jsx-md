@@ -3,9 +3,9 @@ import MD, { Component, Fragment, MarkdownNil, MarkdownText } from "..";
 
 type MarkdownTextOrNil = MarkdownText | MarkdownNil;
 
-type Props = { children?: MarkdownTextOrNil | MarkdownTextOrNil[] };
+type Props = { children: MarkdownTextOrNil | MarkdownTextOrNil[] };
 
-function escape(str?: MarkdownTextOrNil): string | undefined {
+function escape(str: MarkdownTextOrNil): string | undefined {
   if (str === null || str === undefined || str === false) {
     return undefined;
   }

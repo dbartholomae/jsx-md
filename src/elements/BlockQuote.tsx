@@ -1,10 +1,11 @@
 /* @jsx MD */
-import MD, { Component, Fragment, PropsWithChildren } from "..";
+import MD, { Component, Fragment } from "..";
 
-export const BlockQuote: Component<PropsWithChildren> = ({ children }) => {
-  if (children === undefined) {
-    return null;
-  }
+interface Props {
+  children: string | string[];
+}
+
+export const BlockQuote: Component<Props> = ({ children }) => {
   if (!Array.isArray(children)) {
     return (
       <Fragment>

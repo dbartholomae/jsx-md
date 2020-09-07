@@ -1,4 +1,9 @@
-import { Component, MarkdownNode, MdFragmentType } from "./model";
+import {
+  Component,
+  MarkdownElement,
+  MarkdownNode,
+  MdFragmentType,
+} from "./model";
 
 export function createElement(
   component: Component,
@@ -14,25 +19,37 @@ export function createElement(
   typeOrComponent: string | Component,
   attributes: Record<string, unknown> | null,
   ...children: MarkdownNode[]
-): MarkdownNode {
+): MarkdownElement {
   if (typeOrComponent === MdFragmentType) {
-    return {
-      props: {
-        children: children.flat(),
-      },
-      key: null,
-      type: MdFragmentType,
-    };
+    return createFragmentElement(children);
   }
 
-  if (typeof typeOrComponent !== "function") {
-    throw new TypeError(
-      "No lower-case elements or class components supported, please make sure all your components start with an upper-case letter and are functions."
-    );
+  if (typeof typeOrComponent === "function") {
+    return createComponentElement(typeOrComponent, attributes, children);
   }
 
+  throw new TypeError(
+    "No lower-case elements or class components supported, please make sure all your components start with an upper-case letter and are functions."
+  );
+}
+
+function createFragmentElement(children: MarkdownNode[]): MarkdownElement {
   return {
-    type: typeOrComponent,
+    props: {
+      children: children.flat(),
+    },
+    key: null,
+    type: MdFragmentType,
+  };
+}
+
+function createComponentElement(
+  component: Component,
+  attributes: Record<string, unknown> | null,
+  children: MarkdownNode[]
+): MarkdownElement {
+  return {
+    type: component,
     props: {
       ...(attributes ?? {}),
       children: children.length <= 1 ? children[0] : children,

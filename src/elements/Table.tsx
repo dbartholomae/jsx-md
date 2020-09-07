@@ -1,15 +1,24 @@
 /* @jsx MD */
-import MD, { Component, Fragment } from "..";
+import MD, { Component, Fragment, MarkdownChildren, MarkdownElement } from "..";
+import { intersperse } from "../util/intersperse";
 
 type Props<Headers extends string> = {
-  body: Record<Headers, string>[];
-  headers: Record<Headers, string>;
+  body: Record<Headers, MarkdownChildren>[];
+  headers: Record<Headers, MarkdownChildren>;
 };
 
-function renderRow(entries: Record<string, string>): string {
-  return Object.values(entries)
-    .map((entry: string) => ` ${entry} |`)
-    .join("");
+function renderRow(entries: Record<string, MarkdownChildren>): MarkdownElement {
+  return (
+    <Fragment>
+      {Object.values(entries).map((entry: MarkdownChildren, index: number) => (
+        <Fragment key={index}>
+          {" "}
+          {entry}
+          {" |"}
+        </Fragment>
+      ))}
+    </Fragment>
+  );
 }
 
 function renderSeparator(columnWidths: number[]): string {
@@ -22,11 +31,12 @@ export function Table<Headers extends string>({
   body,
   headers,
 }: Props<Headers>): ReturnType<Component<Props<Headers>>> {
-  // TODO: remove type assertion once TypeScript correctly runs inference.
-  //  See https://github.com/microsoft/TypeScript/issues/40419
-  const columnWidths = (Object.values(headers) as string[]).map(
-    (header: string) => header.length
-  );
+  const columnWidths = Object.values(headers).map((header) => {
+    if (typeof header !== "string") {
+      return 5;
+    }
+    return header.length;
+  });
   return (
     <Fragment>
       {"\n|"}
@@ -34,7 +44,10 @@ export function Table<Headers extends string>({
       {"\n|"}
       {renderSeparator(columnWidths)}
       {"\n|"}
-      {body.map((row) => renderRow(row)).join("\n|")}
+      {intersperse(
+        body.map((row) => renderRow(row)),
+        "\n|"
+      )}
       {"\n"}
     </Fragment>
   );

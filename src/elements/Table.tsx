@@ -32,7 +32,7 @@ function sortKeysInOrderOf<Obj extends Record<string, unknown>>(
 ): (obj: Obj) => Obj {
   return (obj: Obj) =>
     keys.reduce((bodyAccumulator, header) => {
-      const { [header]: omitted, ...bodyWithoutHeader } = bodyAccumulator;
+      const { [header]: _omitted, ...bodyWithoutHeader } = bodyAccumulator;
       return {
         ...bodyWithoutHeader,
         [header]: obj[header],

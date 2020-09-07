@@ -5,8 +5,8 @@ import { ReferenceImage } from ".";
 
 describe("ReferenceImage", () => {
   it("renders to a markdown image with reference", () => {
-    expect(render(<ReferenceImage reference="logo">Test</ReferenceImage>)).toBe(
-      "![Test][logo]"
-    );
+    expect(
+      render(<ReferenceImage reference="logo">Alternative text</ReferenceImage>)
+    ).toBe("![Alternative text][logo]");
   });
 });

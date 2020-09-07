@@ -5,12 +5,14 @@ import { ReferenceLink } from ".";
 
 describe("ReferenceLink", () => {
   it("renders to a markdown link without reference", () => {
-    expect(render(<ReferenceLink>Test</ReferenceLink>)).toBe("[Test]");
+    expect(render(<ReferenceLink>Link text</ReferenceLink>)).toBe(
+      "[Link text]"
+    );
   });
 
   it("renders to a markdown link with reference", () => {
-    expect(render(<ReferenceLink reference="1">Test</ReferenceLink>)).toBe(
-      "[Test][1]"
+    expect(render(<ReferenceLink reference="1">Link text</ReferenceLink>)).toBe(
+      "[Link text][1]"
     );
   });
 });

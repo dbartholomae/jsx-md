@@ -1,10 +1,7 @@
 /* @jsx createElement */
 import { createElement } from "./createElement";
-import { Component } from ".";
+import { Component, Text } from ".";
 import { render } from "./render";
-
-type TextProps = { children?: string };
-const Text: Component<TextProps> = ({ children }) => children;
 
 describe("render", () => {
   it("returns '' if element is undefined", () => {
@@ -38,7 +35,9 @@ describe("render", () => {
 
   it("renders a functional component with an attribute", () => {
     type Props = { attribute: string };
-    const TestComponent: Component<Props> = ({ attribute }) => attribute;
+    const TestComponent: Component<Props> = ({ attribute }) => (
+      <Text>{attribute}</Text>
+    );
     expect(render(<TestComponent attribute="Test" />)).toBe("Test");
   });
 });

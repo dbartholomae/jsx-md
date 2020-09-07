@@ -1,7 +1,7 @@
 /* @jsx MD */
 import MD, { Component, render } from "..";
 
-import { UnorderedList } from ".";
+import { Text, UnorderedList } from ".";
 
 describe("UnorderedList", () => {
   it("returns '' if no children are set", () => {
@@ -25,7 +25,9 @@ describe("UnorderedList", () => {
 
   it("wraps nested components", () => {
     type Props = { children?: string };
-    const TestComponent: Component<Props> = ({ children }) => children;
+    const TestComponent: Component<Props> = ({ children }) => (
+      <Text>{children}</Text>
+    );
     expect(
       render(
         <UnorderedList>

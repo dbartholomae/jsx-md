@@ -1,9 +1,9 @@
 /* @jsx MD */
 import MD, { Component, render } from "..";
 
-import { OrderedList } from ".";
+import { OrderedList, Text } from ".";
 
-type Props = { children?: string };
+type Props = { children: string };
 describe("OrderedList", () => {
   it("returns '' if no children are set", () => {
     expect(render(<OrderedList />)).toBe("");
@@ -25,7 +25,9 @@ describe("OrderedList", () => {
   });
 
   it("wraps nested components", () => {
-    const TestComponent: Component<Props> = ({ children }) => children;
+    const TestComponent: Component<Props> = ({ children }) => (
+      <Text>{children}</Text>
+    );
 
     expect(
       render(

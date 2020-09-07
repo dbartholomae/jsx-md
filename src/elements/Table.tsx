@@ -27,6 +27,19 @@ function renderSeparator(columnWidths: number[]): string {
     .join("");
 }
 
+function sortKeysInOrderOf<Obj extends Record<string, unknown>>(
+  keys: (keyof Obj)[]
+): (obj: Obj) => Obj {
+  return (obj: Obj) =>
+    keys.reduce((bodyAccumulator, header) => {
+      const { [header]: omitted, ...bodyWithoutHeader } = bodyAccumulator;
+      return {
+        ...bodyWithoutHeader,
+        [header]: obj[header],
+      } as Obj;
+    }, obj);
+}
+
 export function Table<Headers extends string>({
   body,
   headers,
@@ -37,6 +50,10 @@ export function Table<Headers extends string>({
     }
     return header.length;
   });
+
+  const sortedBody = body.map(
+    sortKeysInOrderOf(Object.keys(headers) as Headers[])
+  );
   return (
     <Fragment>
       {"\n|"}
@@ -45,7 +62,7 @@ export function Table<Headers extends string>({
       {renderSeparator(columnWidths)}
       {"\n|"}
       {intersperse(
-        body.map((row) => renderRow(row)),
+        sortedBody.map((row) => renderRow(row)),
         "\n|"
       )}
       {"\n"}

@@ -29,7 +29,7 @@ export function createElement(
   }
 
   throw new TypeError(
-    "No lower-case elements or class components supported, please make sure all your components start with an upper-case letter and are functions."
+    `Unsupported lower-case element '${typeOrComponent}' encountered, please make sure all your components start with an upper-case letter and are functions.`
   );
 }
 

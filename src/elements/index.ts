@@ -1,3 +1,7 @@
+/**
+ * @packageDocumentation
+ * @internal
+ */
 export { BlockQuote } from "./BlockQuote";
 export { CodeBlock } from "./CodeBlock";
 export { Emphasis } from "./Emphasis";

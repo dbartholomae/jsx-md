@@ -1,5 +1,6 @@
 import { MarkdownChildren, MarkdownElement, MdFragmentType } from "./model";
 
+/** @internal */
 function renderNode(element: MarkdownChildren): string {
   if (element === null || element === undefined || element === false) {
     return "";
@@ -22,6 +23,7 @@ function renderNode(element: MarkdownChildren): string {
   throw new Error("Invalid element");
 }
 
+/** Renders a markdown element into text. */
 export function render(element: MarkdownElement): string {
   return renderNode(element);
 }

@@ -1,3 +1,7 @@
+/**
+ * @packageDocumentation
+ * @internal
+ */
 import {
   Component,
   MarkdownElement,

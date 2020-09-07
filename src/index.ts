@@ -1,3 +1,7 @@
+/**
+ * @packageDocumentation
+ * @internal
+ */
 import { createElement } from "./createElement";
 
 export * from "./elements";

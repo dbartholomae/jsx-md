@@ -6,6 +6,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "rimraf lib && tsc -p tsconfig.build.json",
+    "doc": "typedoc",
     "lint": "eslint src/**/*.ts src/**/*.tsx examples/**/*.tsx",
     "test": "jest && pkg-ok"
   },
@@ -24,15 +25,16 @@
   ],
   "author": "Daniel Bartholomae (daniel@bartholomae.name)",
   "license": "MIT",
+  "homepage": "https://dbartholomae.github.io/jsx-md",
   "repository": "git@github.com:dbartholomae/jsx-md.git",
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.2",
     "@types/jest": "^26.0.10",
     "@types/react": "^16.9.49",
-    "@typescript-eslint/eslint-plugin": "^3.10.1",
-    "@typescript-eslint/parser": "^3.10.1",
-    "eslint": "^7.7.0",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.20.6",
@@ -44,6 +46,9 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^26.2.0",
     "tslib": "^2.0.1",
+    "typedoc": "^0.19.1",
+    "typedoc-plugin-param-names": "^1.0.2",
+    "typedoc-plugin-sourcefile-url": "^1.0.6",
     "typescript": "^4.0.2"
   }
 }

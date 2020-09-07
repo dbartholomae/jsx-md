@@ -1,3 +1,7 @@
+/**
+ * @packageDocumentation
+ * @internal
+ */
 export function intersperse<Element, Separator>(
   array: Element[],
   separator: Separator

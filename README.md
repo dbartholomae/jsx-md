@@ -35,3 +35,7 @@ const Readme: Component = () => (
 // intermediate results from creating elements.
 writeFileSync("README.md", render(<Readme />));
 ```
+
+## Documentation
+
+There's a [documentation](https://dbartholomae.github.io/jsx-md) of all elements you can use.

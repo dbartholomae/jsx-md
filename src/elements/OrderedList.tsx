@@ -6,9 +6,6 @@ interface Props {
 }
 
 export const OrderedList: Component<Props> = ({ children }) => {
-  if (children === undefined) {
-    return null;
-  }
   return (
     <Fragment>
       {children.map((child, index) => (

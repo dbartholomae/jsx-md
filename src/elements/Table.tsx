@@ -1,15 +1,12 @@
 /* @jsx MD */
 import MD, { Component, Fragment } from "..";
 
-type KeyedHashMap<Keys extends string, Value> = { [key in Keys]: Value };
 type Props<Headers extends string> = {
-  body: KeyedHashMap<Headers, string>[];
-  headers: KeyedHashMap<Headers, string>;
+  body: Record<Headers, string>[];
+  headers: Record<Headers, string>;
 };
 
-function renderRow<Headers extends string>(
-  entries: KeyedHashMap<Headers, string>
-): string {
+function renderRow(entries: Record<string, string>): string {
   return Object.values(entries)
     .map((entry: string) => ` ${entry} |`)
     .join("");
@@ -25,7 +22,9 @@ export function Table<Headers extends string>({
   body,
   headers,
 }: Props<Headers>): ReturnType<Component<Props<Headers>>> {
-  const columnWidths = Object.values(headers).map(
+  // TODO: remove type assertion once TypeScript correctly runs inference.
+  //  See https://github.com/microsoft/TypeScript/issues/40419
+  const columnWidths = (Object.values(headers) as string[]).map(
     (header: string) => header.length
   );
   return (

@@ -1,4 +1,4 @@
-import fs from "fs";
+import * as fs from "fs";
 import "./README.md.tsx";
 
 describe("README creation script", () => {

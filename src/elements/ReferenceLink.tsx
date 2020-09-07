@@ -1,9 +1,14 @@
 /* @jsx MD */
-import MD, { Component, Fragment, MarkdownNode } from "..";
+import MD, { Component, Fragment, PropsWithChildren } from "..";
 
-type Props = { children?: MarkdownNode; reference?: string };
+interface Props {
+  reference?: string;
+}
 
-export const ReferenceLink: Component<Props> = ({ children, reference }) => (
+export const ReferenceLink: Component<PropsWithChildren<Props>> = ({
+  children,
+  reference,
+}) => (
   <Fragment>
     {"["}
     {children}

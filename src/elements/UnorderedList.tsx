@@ -1,7 +1,9 @@
 /* @jsx MD */
 import MD, { Component, Fragment, MarkdownNode } from "..";
 
-type Props = { children?: MarkdownNode[] };
+interface Props {
+  children: MarkdownNode[];
+}
 
 export const UnorderedList: Component<Props> = ({ children }) => {
   if (children === undefined) {

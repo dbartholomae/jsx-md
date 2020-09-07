@@ -1,7 +1,7 @@
 /* @jsx MD */
-import MD, { Component, Fragment, MarkdownNode } from "..";
+import MD, { Component, Fragment } from "..";
 
-type Props = { children?: MarkdownNode; src: string; title?: string };
+type Props = { children: string; src: string; title?: string };
 
 export const Image: Component<Props> = ({ children, src, title }) => (
   <Fragment>

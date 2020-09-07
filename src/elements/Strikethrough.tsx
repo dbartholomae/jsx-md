@@ -1,9 +1,7 @@
 /* @jsx MD */
-import MD, { Component, Fragment, MarkdownNode } from "..";
+import MD, { Component, Fragment, PropsWithChildren } from "..";
 
-type Props = { children?: MarkdownNode };
-
-export const Strikethrough: Component<Props> = ({ children }) => (
+export const Strikethrough: Component<PropsWithChildren> = ({ children }) => (
   <Fragment>
     {"~~"}
     {children}

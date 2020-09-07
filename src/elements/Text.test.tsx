@@ -12,6 +12,12 @@ describe("Text", () => {
     expect(render(<Text>Test{null}</Text>)).toBe("Test");
   });
 
+  it("escapes multiple instances in the same string", () => {
+    expect(render(<Text>(Parantheses in [parantheses])</Text>)).toBe(
+      "\\(Parantheses in \\[parantheses\\]\\)"
+    );
+  });
+
   it.each([
     "\\",
     "`",
@@ -48,7 +54,7 @@ describe("Text", () => {
     "-",
     ".",
     "!",
-  ])("escapes twice %s", (char: string) => {
+  ])("escapes two elements of %s", (char: string) => {
     expect(
       render(
         <Text>

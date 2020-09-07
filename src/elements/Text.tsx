@@ -9,7 +9,7 @@ function escape(str: MarkdownTextOrNil): string | undefined {
   if (str === null || str === undefined || str === false) {
     return undefined;
   }
-  const charsToEscapeRegex = /[!.\-\+\\#\(\)\[\]\{\}_\*`]/;
+  const charsToEscapeRegex = /[!.\-\+\\#\(\)\[\]\{\}_\*`]/g;
   return str.toString().replace(charsToEscapeRegex, (match) => `\\${match}`);
 }
 

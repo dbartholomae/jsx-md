@@ -1,7 +1,7 @@
 /* @jsx MD */
-import MD, { Component, Fragment, Markdown } from "..";
+import MD, { Component, Fragment, MarkdownNode } from "..";
 
-type Props = { children?: Markdown | Markdown[]; reference?: string };
+type Props = { children?: MarkdownNode; reference?: string };
 
 export const ReferenceLink: Component<Props> = ({ children, reference }) => (
   <Fragment>

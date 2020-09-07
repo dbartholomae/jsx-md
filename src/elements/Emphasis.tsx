@@ -1,9 +1,14 @@
 /* @jsx MD */
-import MD, { Component, Fragment } from "..";
+import MD, { Component, Fragment, PropsWithChildren } from "..";
 
-type Props = { children?: string; strong?: boolean };
+interface Props {
+  strong?: boolean;
+}
 
-export const Emphasis: Component<Props> = ({ children, strong }) => {
+export const Emphasis: Component<PropsWithChildren<Props>> = ({
+  children,
+  strong,
+}) => {
   const marker = strong ? "**" : "_";
   return (
     <Fragment>

@@ -1,6 +1,13 @@
-import { Component, Markdown } from "../model";
+import { Component, MarkdownChildren, MdFragmentType } from "../model";
 
-type Props = { children?: Markdown | Markdown[] };
-
-export const Fragment: Component<Props> = ({ children }) =>
-  Array.isArray(children) ? children.join("") : children;
+interface Props {
+  children: MarkdownChildren;
+}
+// TODO: Use md-fragment instead
+export const Fragment: Component<Props> = ({ children }) => ({
+  props: {
+    children: Array.isArray(children) ? children.flat() : children,
+  },
+  key: null,
+  type: MdFragmentType,
+});

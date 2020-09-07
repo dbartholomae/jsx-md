@@ -1,8 +1,8 @@
 /* @jsx MD */
-import MD, { Component, Fragment } from "..";
+import MD, { Component, Fragment, MarkdownNode } from "..";
 
 type Props = {
-  children?: string | string[];
+  children?: MarkdownNode;
   level: 1 | 2 | 3 | 4 | 5 | 6;
 };
 

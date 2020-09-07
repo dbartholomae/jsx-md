@@ -4,8 +4,15 @@ import { Component, Text } from ".";
 import { render } from "./render";
 
 describe("render", () => {
-  it("returns '' if element is undefined", () => {
-    expect(render(undefined)).toBe("");
+  it("throws an error when rendering an invalid element", () => {
+    expect(() =>
+      render({
+        // @ts-expect-error - invalid element type is not assignable
+        type: "invalid element type",
+        key: null,
+        props: {},
+      })
+    ).toThrowError();
   });
   it("throws an error if a lower-case component is used", () => {
     // @ts-expect-error - lower-case element test does not exist

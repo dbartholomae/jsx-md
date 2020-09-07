@@ -1,15 +1,21 @@
-import { Component, Markdown } from "..";
+/* @jsx MD */
+import MD, { Component, Fragment, MarkdownNil, MarkdownText } from "..";
 
-type Props = { children?: Markdown | Markdown[] };
+type MarkdownTextOrNil = MarkdownText | MarkdownNil;
 
-function escape(str?: string | number): string | undefined {
+type Props = { children?: MarkdownTextOrNil | MarkdownTextOrNil[] };
+
+function escape(str?: MarkdownTextOrNil): string | undefined {
+  if (str === null || str === undefined || str === false) {
+    return undefined;
+  }
   const charsToEscapeRegex = /[!.\-\+\\#\(\)\[\]\{\}_\*`]/;
-  return str?.toString()?.replace(charsToEscapeRegex, (match) => `\\${match}`);
+  return str.toString().replace(charsToEscapeRegex, (match) => `\\${match}`);
 }
 
 export const Text: Component<Props> = ({ children }) => {
   if (Array.isArray(children)) {
-    return children.map(escape);
+    return <Fragment>{children.map(escape)}</Fragment>;
   }
-  return escape(children);
+  return <Fragment>{escape(children)}</Fragment>;
 };

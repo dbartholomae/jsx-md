@@ -1,11 +1,9 @@
 /* @jsx MD */
-import MD, { Component, Fragment, Markdown } from "..";
+import MD, { Component, Fragment, PropsWithChildren } from "..";
 
-type Props = { children?: Markdown | Markdown[] };
-
-export const BlockQuote: Component<Props> = ({ children }) => {
+export const BlockQuote: Component<PropsWithChildren> = ({ children }) => {
   if (children === undefined) {
-    return undefined;
+    return null;
   }
   if (!Array.isArray(children)) {
     return (

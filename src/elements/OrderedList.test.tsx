@@ -5,10 +5,6 @@ import { OrderedList, Text } from ".";
 
 type Props = { children: string };
 describe("OrderedList", () => {
-  it("returns '' if no children are set", () => {
-    expect(render(<OrderedList />)).toBe("");
-  });
-
   it("wraps each child with a linebreak and a continuosly increasing number", () => {
     expect(
       render(

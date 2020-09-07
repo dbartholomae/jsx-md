@@ -7,11 +7,6 @@ describe("render", () => {
   it("returns '' if element is undefined", () => {
     expect(render(undefined)).toBe("");
   });
-
-  it("renders a string to itself", () => {
-    expect(render("Content")).toBe("Content");
-  });
-
   it("throws an error if a lower-case component is used", () => {
     // @ts-expect-error - lower-case element test does not exist
     expect(() => render(<test>Test</test>)).toThrowError(
@@ -27,10 +22,6 @@ describe("render", () => {
     const TestComponent: Component = () => <Text>Content</Text>;
 
     expect(render(<TestComponent />)).toBe("Content");
-  });
-
-  it("renders an array its concatenation", () => {
-    expect(render(["More", " ", "Content"])).toBe("More Content");
   });
 
   it("renders a functional component with an attribute", () => {

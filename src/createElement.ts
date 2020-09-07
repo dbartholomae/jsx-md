@@ -1,4 +1,4 @@
-import { Component, MarkdownNode } from "./model";
+import { Component, MarkdownNode, MdFragmentType } from "./model";
 
 export function createElement(
   component: Component,
@@ -15,11 +15,22 @@ export function createElement(
   attributes: Record<string, unknown> | null,
   ...children: MarkdownNode[]
 ): MarkdownNode {
+  if (typeOrComponent === MdFragmentType) {
+    return {
+      props: {
+        children: children.flat(),
+      },
+      key: null,
+      type: MdFragmentType,
+    };
+  }
+
   if (typeof typeOrComponent !== "function") {
     throw new TypeError(
       "No lower-case elements or class components supported, please make sure all your components start with an upper-case letter and are functions."
     );
   }
+
   return {
     type: typeOrComponent,
     props: {

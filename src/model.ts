@@ -1,4 +1,4 @@
-export const MdFragmentType = "md-fragment" as const;
+export const MdFragmentType = "mdFragment" as const;
 
 interface FunctionElement<Props = unknown> {
   type: Component<Props>;

@@ -1,7 +1,10 @@
 /* @jsx MD */
 import MD, { Component, Fragment } from "..";
 
-type Props = { children?: string; language?: string };
+interface Props {
+  children: string;
+  language?: string;
+}
 
 export const CodeBlock: Component<Props> = ({ children, language }) => (
   <Fragment>

@@ -7,6 +7,7 @@ import MD, {
   Image,
   LineBreak,
   Link,
+  render,
   Text,
 } from "..";
 import { writeFileSync } from "fs";
@@ -84,4 +85,4 @@ writeFileSync("README.md", render(<Readme />));`}
   </Fragment>
 );
 
-writeFileSync("examples/README.md", <Readme />);
+writeFileSync("examples/README.md", render(<Readme />));

@@ -6,7 +6,7 @@ import MD, { Component, Fragment, PropsWithChildren } from "..";
  *   ```js
  *   render(<InlineCode>Test</InlineCode>)
  *   ===
- *   '\`Test\`'
+ *   '`Test`'
  *   ```
  */
 export const InlineCode: Component<PropsWithChildren> = ({ children }) => (

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;elements/Reference&quot; | jsx-md</title>
+	<title>&quot;elements/InlineCode&quot; | jsx-md</title>
 	<meta name="description" content="Documentation for jsx-md">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_elements_reference_.html">&quot;elements/Reference&quot;</a>
+					<a href="_elements_inlinecode_.html">&quot;elements/InlineCode&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;elements/Reference&quot;</h1>
+			<h1>Module &quot;elements/InlineCode&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_elements_reference_.html#reference" class="tsd-kind-icon">Reference</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_elements_inlinecode_.html#inlinecode" class="tsd-kind-icon">Inline<wbr>Code</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,42 +82,34 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="reference" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> Reference</h3>
+					<a name="inlinecode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Inline<wbr>Code</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">Reference<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>children<span class="tsd-signature-symbol">: </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">; </span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+						<li class="tsd-signature tsd-kind-icon">Inline<wbr>Code<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>children<span class="tsd-signature-symbol">: </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dbartholomae/jsx-md/blob/main/src/elements/Reference.tsx#L19">elements/Reference.tsx:19</a></li>
+									<li>Defined in <a href="https://github.com/dbartholomae/jsx-md/blob/main/src/elements/InlineCode.tsx#L12">elements/InlineCode.tsx:12</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code class="language-js">render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Reference</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Title&quot;</span>&gt;</span>
-  https://example.com
-<span class="hljs-tag">&lt;/<span class="hljs-name">Reference</span>&gt;</span></span>)
+									<dd><pre><code class="language-js">render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">InlineCode</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-name">InlineCode</span>&gt;</span></span>)
 ===
-<span class="hljs-string">&#x27;\n[1]: https://example.com &quot;Title&quot;\n&#x27;</span></code></pre>
+<span class="hljs-string">&#x27;\`Test\`&#x27;</span></code></pre>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>props: <span class="tsd-signature-symbol">{ </span>children<span class="tsd-signature-symbol">: </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">; </span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<h5>props: <span class="tsd-signature-symbol">{ </span>children<span class="tsd-signature-symbol">: </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
 											<h5>children<span class="tsd-signature-symbol">: </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 										</li>
 									</ul>
 								</li>
@@ -155,7 +147,7 @@
 					<li class=" tsd-kind-module">
 						<a href="_elements_image_.html">&quot;elements/<wbr>Image&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_elements_inlinecode_.html">&quot;elements/<wbr>Inline<wbr>Code&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -167,7 +159,7 @@
 					<li class=" tsd-kind-module">
 						<a href="_elements_orderedlist_.html">&quot;elements/<wbr>Ordered<wbr>List&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_elements_reference_.html">&quot;elements/<wbr>Reference&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -199,7 +191,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_elements_reference_.html#reference" class="tsd-kind-icon">Reference</a>
+						<a href="_elements_inlinecode_.html#inlinecode" class="tsd-kind-icon">Inline<wbr>Code</a>
 					</li>
 				</ul>
 			</nav>

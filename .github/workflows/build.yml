@@ -28,6 +28,8 @@ jobs:
       run: pnpm install
     - name: Build
       run: pnpm run build
+    - name: Build documentation
+      run: pnpm run docs
     - name: Lint
       run: pnpm run lint
     - name: Run unit tests
@@ -54,6 +56,8 @@ jobs:
       run: pnpm install
     - name: Build
       run: pnpm run build
+    - name: Build documentation
+      run: pnpm run docs
     - name: Set git credentials
       run: |
         git config --local user.email "action@github.com"

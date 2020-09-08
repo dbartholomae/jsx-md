@@ -9,6 +9,7 @@ export { Fragment } from "./Fragment";
 export { Heading } from "./Heading";
 export { HorizontalRule } from "./HorizontalRule";
 export { Image } from "./Image";
+export { InlineCode } from "./InlineCode";
 export { LineBreak } from "./LineBreak";
 export { Link } from "./Link";
 export { OrderedList } from "./OrderedList";

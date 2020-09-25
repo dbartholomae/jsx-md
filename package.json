@@ -8,6 +8,7 @@
     "build": "rimraf lib && tsc -p tsconfig.build.json",
     "docs": "typedoc && touch docs/.nojekyll",
     "lint": "eslint src/**/*.ts src/**/*.tsx examples/**/*.tsx",
+    "pretest": "npm run build",
     "test": "jest && pkg-ok"
   },
   "engines": {

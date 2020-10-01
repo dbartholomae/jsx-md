@@ -1,9 +1,10 @@
-import { MarkdownChildren } from "../model";
-
 /**
  * @packageDocumentation
  * @internal
  */
+
+import { MarkdownChildren } from "../model";
+
 export interface RenderFunction {
   (
     element: MarkdownChildren,

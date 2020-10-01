@@ -1,26 +1,28 @@
-import { MarkdownChildren, MarkdownElement, MdFragmentType } from "./model";
+import { MarkdownChildren, MarkdownElement } from "./model";
+import { renderNil } from "./renderFunctions/renderNil";
+import { renderString } from "./renderFunctions/renderString";
+import { renderNumber } from "./renderFunctions/renderNumber";
+import { renderArray } from "./renderFunctions/renderArray";
+import { renderFunctionElement } from "./renderFunctions/renderFunctionElement";
+import { renderFragmentElement } from "./renderFunctions/renderFragmentElement";
 
 /** @internal */
 function renderNode(element: MarkdownChildren): string {
-  if (element === null || element === undefined || element === false) {
-    return "";
+  const renderFunctions = [
+    renderNil,
+    renderString,
+    renderNumber,
+    renderArray,
+    renderFunctionElement,
+    renderFragmentElement,
+  ];
+  const results = renderFunctions
+    .map((renderFunction) => renderFunction(element, renderNode))
+    .filter((result) => result !== null) as string[];
+  if (results.length === 0) {
+    throw new Error("Invalid element");
   }
-  if (typeof element === "string") {
-    return element;
-  }
-  if (typeof element === "number") {
-    return element.toString();
-  }
-  if (Array.isArray(element)) {
-    return element.map((el) => renderNode(el)).join("");
-  }
-  if (typeof element.type === "function") {
-    return renderNode(element.type(element.props));
-  }
-  if (element.type === MdFragmentType) {
-    return renderNode(element.props.children);
-  }
-  throw new Error("Invalid element");
+  return results[0];
 }
 
 /** Renders a markdown element into text. */

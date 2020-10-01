@@ -2,14 +2,14 @@
 export const MdFragmentType = "mdFragment" as const;
 
 /** @internal */
-interface FunctionElement<Props = unknown> {
+export interface MdFunctionElement<Props = unknown> {
   type: Component<Props>;
   props: Props;
   key: string | number | null;
 }
 
 /** @internal */
-interface MdFragmentElement {
+export interface MdFragmentElement {
   type: typeof MdFragmentType;
   props: PropsWithChildren;
   key: string | number | null;
@@ -17,7 +17,7 @@ interface MdFragmentElement {
 
 /** Internal representation of markdown before rendering. */
 export type MarkdownElement<Props = unknown> =
-  | FunctionElement<Props>
+  | MdFunctionElement<Props>
   | MdFragmentElement;
 
 /** Primitive text types that get converted into text. */

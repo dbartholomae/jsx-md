@@ -17,7 +17,7 @@ export { Strikethrough } from "./Strikethrough";
 export { Reference } from "./Reference";
 export { ReferenceImage } from "./ReferenceImage";
 export { ReferenceLink } from "./ReferenceLink";
-export { Table } from "./Table";
+export { Table, TableAlignment } from "./Table";
 export { Task } from "./Task";
 export { Text } from "./Text";
 export { UnorderedList } from "./UnorderedList";

@@ -7,6 +7,9 @@ interface Props {
 }
 
 /**
+ * @deprecated
+ * Use `<Bold>` and `<Italics>` for strong / weak emphasis instead.
+ *
  * Put emphasis on a text.
  * @example
  *   ```js

@@ -13,6 +13,6 @@ function renderNode(element: MarkdownChildren): string {
 }
 
 /** Renders a markdown element into text. */
-export function render(element: MarkdownElement): string {
+export async function render(element: MarkdownElement): Promise<string> {
   return renderNode(element);
 }

@@ -4,7 +4,7 @@ import MD, { render } from "..";
 import { LineBreak } from ".";
 
 describe("LineBreak", () => {
-  it("returns \\n", () => {
-    expect(render(<LineBreak />)).toBe("\n");
+  it("returns \\n", async () => {
+    expect(await render(<LineBreak />)).toBe("\n");
   });
 });

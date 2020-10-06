@@ -71,6 +71,12 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_elements_table_.tablealignment.html" class="tsd-kind-icon">Table<wbr>Alignment</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_elements_table_.html#table" class="tsd-kind-icon">Table</a></li>
@@ -85,13 +91,13 @@
 					<a name="table" class="tsd-anchor"></a>
 					<h3>Table</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">Table&lt;Headers&gt;<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>body<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">, </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>headers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">, </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><a href="_model_.html#component" class="tsd-signature-type">Component</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Props</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">Table&lt;Headers&gt;<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>body<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">, </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>headers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">MdFragmentElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">FunctionElement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">TableHeader</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><a href="_model_.html#component" class="tsd-signature-type">Component</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Props</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dbartholomae/jsx-md/blob/main/src/elements/Table.tsx#L72">elements/Table.tsx:72</a></li>
+									<li>Defined in <a href="https://github.com/dbartholomae/jsx-md/blob/main/src/elements/Table.tsx#L108">elements/Table.tsx:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -106,19 +112,20 @@
 									<dt>example</dt>
 									<dd><pre><code class="language-js"><span class="hljs-keyword">const</span> headers = {
   <span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;Foo header&quot;</span>,
-  <span class="hljs-attr">bar</span>: <span class="hljs-string">&quot;Bar header&quot;</span>,
+  <span class="hljs-attr">bar</span>: { <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;Bar header&quot;</span>, <span class="hljs-attr">alignment</span>: TableAlignment.CENTER },
+  <span class="hljs-attr">baz</span>: { <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;Baz header&quot;</span> },
 };
 <span class="hljs-keyword">const</span> body = [
-  { <span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;Foo body 1&quot;</span>, <span class="hljs-attr">bar</span>: <span class="hljs-string">&quot;Bar body 1&quot;</span> },
-  { <span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;Foo body 2&quot;</span>, <span class="hljs-attr">bar</span>: <span class="hljs-string">&quot;Bar body 2&quot;</span> },
+  { <span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;Foo body 1&quot;</span>, <span class="hljs-attr">bar</span>: <span class="hljs-string">&quot;Bar body 1&quot;</span>, <span class="hljs-attr">baz</span>: <span class="hljs-string">&quot;Baz body 1&quot;</span> },
+  { <span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;Foo body 2&quot;</span>, <span class="hljs-attr">bar</span>: <span class="hljs-string">&quot;Bar body 2&quot;</span>, <span class="hljs-attr">baz</span>: <span class="hljs-string">&quot;Baz body 2&quot;</span> },
 ];
 render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Table</span> <span class="hljs-attr">headers</span>=<span class="hljs-string">{headers}</span> <span class="hljs-attr">body</span>=<span class="hljs-string">{body}</span> /&gt;</span></span>)
 ===
 <span class="hljs-string">`
-| Foo header | Bar header |
-| ---------- | ---------- |
-| Foo body 1 | Bar body 1 |
-| Foo body 2 | Bar body 2 |
+| Foo header | Bar header | Baz header |
+| ---------- | :--------: | ---------- |
+| Foo body 1 | Bar body 1 | Baz body 1 |
+| Foo body 2 | Bar body 2 | Baz body 2 |
 `</span></code></pre>
 									</dd>
 								</dl>
@@ -132,18 +139,18 @@ render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Tabl
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>props: <span class="tsd-signature-symbol">{ </span>body<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">, </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>headers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">, </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h5>
+									<h5>props: <span class="tsd-signature-symbol">{ </span>body<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">, </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>headers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">MdFragmentElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">FunctionElement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">TableHeader</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
 											<h5>body<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">, </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h5>
 											<div class="tsd-comment tsd-typography">
 												<div class="lead">
-													<p>An array of data objects with the same keys as the headers to be displayed as rows</p>
+													<p>An array of data objects with the same keys as the headers to be displayed as rows.</p>
 												</div>
 											</div>
 										</li>
 										<li class="tsd-parameter">
-											<h5>headers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">, </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">&gt;</span></h5>
+											<h5>headers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">MdFragmentElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">FunctionElement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="_model_.html#markdownchildren" class="tsd-signature-type">MarkdownChildren</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">TableHeader</span><span class="tsd-signature-symbol">&gt;</span></h5>
 											<div class="tsd-comment tsd-typography">
 												<div class="lead">
 													<p>An object giving the headers for each column. The order in which the keys
@@ -240,6 +247,9 @@ render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Tabl
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_elements_table_.tablealignment.html" class="tsd-kind-icon">Table<wbr>Alignment</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="_elements_table_.html#table" class="tsd-kind-icon">Table</a>
 					</li>
@@ -257,6 +267,9 @@ render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Tabl
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 		</div>
 	</div>

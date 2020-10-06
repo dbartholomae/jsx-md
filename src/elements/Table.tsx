@@ -80,6 +80,21 @@ function sortKeysInOrderOf<Obj extends Record<string, unknown>>(
     }, obj);
 }
 
+/** @internal */
+function normalizeHeaders<Headers extends string>(
+  headers: Record<Headers, MarkdownChildren | TableHeader>
+) {
+  return Object.keys(headers).reduce<Record<string, TableHeader>>(
+    (normalizedHeaderAccumulator, key) => ({
+      ...normalizedHeaderAccumulator,
+      [key]: isTableHeader(headers[key as Headers])
+        ? (headers[key as Headers] as TableHeader)
+        : { title: headers[key as Headers] as MarkdownChildren },
+    }),
+    {}
+  );
+}
+
 /**
  * Creates a markdown table based on a headers object and an array of rows.
  * Columns are ordered in the order in which the header keys were created.
@@ -115,27 +130,15 @@ export function Table<Headers extends string>({
    */
   headers,
 }: Props<Headers>): ReturnType<Component<Props<Headers>>> {
-  const columns = Object.values(headers).map((header) => {
-    let width = typeof header !== "string" ? 5 : header.length;
-    let alignment;
-    if (isTableHeader(header)) {
-      ({ alignment } = header);
-      if (typeof header.title === "string") {
-        width = header.title.length;
-      }
-    }
-    return { width, alignment };
-  });
+  const normalizedHeaders = normalizeHeaders(headers);
 
-  const normalizedColumns = Object.keys(headers).reduce(
-    (normalizedHeaderAccumulator: Record<string, MarkdownChildren>, key) => {
-      const header = headers[key as Headers];
-      return {
-        ...normalizedHeaderAccumulator,
-        [key]: isTableHeader(header) ? header.title : header,
-      } as Record<string, MarkdownChildren>;
-    },
-    {}
+  const columns = Object.values(normalizedHeaders).map((header) => ({
+    width: typeof header.title === "string" ? header.title.length : 5,
+    alignment: header.alignment,
+  }));
+
+  const normalizedColumns = Object.fromEntries(
+    Object.entries(normalizedHeaders).map(([key, value]) => [key, value.title])
   );
 
   const sortedBody = body.map(

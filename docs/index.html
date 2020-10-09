@@ -95,10 +95,11 @@ const Readme: Component = () =&gt; (
   &lt;/&gt;
 );
 
-// Currently, the rendering function is not always necessary.
-// This might change in the future, though, so do not rely on any
-// intermediate results from creating elements.
-writeFileSync(&quot;README.md&quot;, render(&lt;Readme /&gt;));</code></pre>
+async function writeReadme() {
+  writeFileSync(&quot;README.md&quot;, await render(&lt;Readme /&gt;));
+}
+
+void writeReadme();</code></pre>
 				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
 					<h2>Documentation</h2>
 				</a>
@@ -180,6 +181,21 @@ writeFileSync(&quot;README.md&quot;, render(&lt;Readme /&gt;));</code></pre>
 					<li class=" tsd-kind-module">
 						<a href="modules/_render_.html">&quot;render&quot;</a>
 					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_renderfunctions_index_.html">&quot;render<wbr>Functions/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_renderfunctions_rendernil_.html">&quot;render<wbr>Functions/render<wbr>Nil&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_util_ismarkdownnil_.html">&quot;util/is<wbr>Markdown<wbr>Nil&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_util_ismdfragmentelement_.html">&quot;util/is<wbr>MdFragment<wbr>Element&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_util_ismdfunctionelement_.html">&quot;util/is<wbr>MdFunction<wbr>Element&quot;</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
@@ -194,6 +210,7 @@ writeFileSync(&quot;README.md&quot;, render(&lt;Readme /&gt;));</code></pre>
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>

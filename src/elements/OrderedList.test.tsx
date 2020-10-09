@@ -5,9 +5,9 @@ import { OrderedList, Text } from ".";
 
 type Props = { children: string };
 describe("OrderedList", () => {
-  it("wraps each child with a linebreak and a continuosly increasing number", () => {
+  it("wraps each child with a linebreak and a continuosly increasing number", async () => {
     expect(
-      render(
+      await render(
         <OrderedList>
           {"a"}
           {"b"}
@@ -20,13 +20,13 @@ describe("OrderedList", () => {
 `);
   });
 
-  it("wraps nested components", () => {
+  it("wraps nested components", async () => {
     const TestComponent: Component<Props> = ({ children }) => (
       <Text>{children}</Text>
     );
 
     expect(
-      render(
+      await render(
         <OrderedList>
           <TestComponent>a</TestComponent>
           <TestComponent>b</TestComponent>

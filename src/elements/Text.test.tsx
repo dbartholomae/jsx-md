@@ -4,16 +4,16 @@ import MD, { render } from "..";
 import { Text } from ".";
 
 describe("Text", () => {
-  it("renders to the children", () => {
-    expect(render(<Text>Test</Text>)).toBe("Test");
+  it("renders to the children", async () => {
+    expect(await render(<Text>Test</Text>)).toBe("Test");
   });
 
-  it("renders correctly with some children being null", () => {
-    expect(render(<Text>Test{null}</Text>)).toBe("Test");
+  it("renders correctly with some children being null", async () => {
+    expect(await render(<Text>Test{null}</Text>)).toBe("Test");
   });
 
-  it("escapes multiple instances in the same string", () => {
-    expect(render(<Text>(Parantheses in [parantheses])</Text>)).toBe(
+  it("escapes multiple instances in the same string", async () => {
+    expect(await render(<Text>(Parantheses in [parantheses])</Text>)).toBe(
       "\\(Parantheses in \\[parantheses\\]\\)"
     );
   });
@@ -34,8 +34,8 @@ describe("Text", () => {
     "-",
     ".",
     "!",
-  ])("escapes %s", (char: string) => {
-    expect(render(<Text>{char}</Text>)).toBe(`\\${char}`);
+  ])("escapes %s", async (char: string) => {
+    expect(await render(<Text>{char}</Text>)).toBe(`\\${char}`);
   });
 
   it.each([
@@ -54,9 +54,9 @@ describe("Text", () => {
     "-",
     ".",
     "!",
-  ])("escapes two elements of %s", (char: string) => {
+  ])("escapes two elements of %s", async (char: string) => {
     expect(
-      render(
+      await render(
         <Text>
           {char}
           {char}

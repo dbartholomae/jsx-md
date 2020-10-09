@@ -9,7 +9,7 @@ import MD, {
   Link,
   render,
   Text,
-} from "..";
+} from "../src";
 import { writeFileSync } from "fs";
 import pkg from "../package.json";
 
@@ -85,4 +85,8 @@ writeFileSync("README.md", render(<Readme />));`}
   </Fragment>
 );
 
-writeFileSync("examples/README.md", render(<Readme />));
+async function createReadme() {
+  writeFileSync("examples/README.md", await render(<Readme />));
+}
+
+createReadme();

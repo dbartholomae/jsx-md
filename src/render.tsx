@@ -1,29 +1,18 @@
-import { MarkdownChildren, MarkdownElement, MdFragmentType } from "./model";
+import { MarkdownChildren, MarkdownElement } from "./model";
+import { synchronousRenderFunctions } from "./renderFunctions";
 
 /** @internal */
 function renderNode(element: MarkdownChildren): string {
-  if (element === null || element === undefined || element === false) {
-    return "";
+  const results = synchronousRenderFunctions
+    .map((renderFunction) => renderFunction(element, renderNode))
+    .filter((result) => result !== null) as string[];
+  if (results.length === 0) {
+    throw new Error("Invalid element");
   }
-  if (typeof element === "string") {
-    return element;
-  }
-  if (typeof element === "number") {
-    return element.toString();
-  }
-  if (Array.isArray(element)) {
-    return element.map((el) => renderNode(el)).join("");
-  }
-  if (typeof element.type === "function") {
-    return renderNode(element.type(element.props));
-  }
-  if (element.type === MdFragmentType) {
-    return renderNode(element.props.children);
-  }
-  throw new Error("Invalid element");
+  return results[0];
 }
 
 /** Renders a markdown element into text. */
-export function render(element: MarkdownElement): string {
+export async function render(element: MarkdownElement): Promise<string> {
   return renderNode(element);
 }

@@ -4,9 +4,9 @@ import MD, { Component, render } from "..";
 import { Text, UnorderedList } from ".";
 
 describe("UnorderedList", () => {
-  it("wraps each child with a linebreak and a *", () => {
+  it("wraps each child with a linebreak and a *", async () => {
     expect(
-      render(
+      await render(
         <UnorderedList>
           {"a"}
           {"b"}
@@ -19,13 +19,13 @@ describe("UnorderedList", () => {
 `);
   });
 
-  it("wraps nested components", () => {
+  it("wraps nested components", async () => {
     type Props = { children?: string };
     const TestComponent: Component<Props> = ({ children }) => (
       <Text>{children}</Text>
     );
     expect(
-      render(
+      await render(
         <UnorderedList>
           <TestComponent>a</TestComponent>
           <TestComponent>b</TestComponent>

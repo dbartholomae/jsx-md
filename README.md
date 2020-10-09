@@ -30,10 +30,11 @@ const Readme: Component = () => (
   </>
 );
 
-// Currently, the rendering function is not always necessary.
-// This might change in the future, though, so do not rely on any
-// intermediate results from creating elements.
-writeFileSync("README.md", render(<Readme />));
+async function writeReadme() {
+  writeFileSync("README.md", await render(<Readme />));
+}
+
+void writeReadme();
 ```
 
 ## Documentation

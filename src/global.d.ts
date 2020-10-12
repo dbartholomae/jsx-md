@@ -6,6 +6,9 @@ declare global {
       mdFragment: {
         children?: MarkdownChildren;
       };
+      mdAwait: {
+        children?: Promise<MarkdownChildren>;
+      };
     }
   }
 }

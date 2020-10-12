@@ -4,5 +4,5 @@
  */
 import { RenderFunction } from "./RenderFunction";
 
-export const renderNumber: RenderFunction = (element) =>
-  typeof element === "number" ? element.toString() : null;
+export const renderNumber: RenderFunction = async (element) =>
+  typeof element === "number" ? Promise.resolve(element.toString()) : null;

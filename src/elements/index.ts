@@ -2,6 +2,7 @@
  * @packageDocumentation
  * @internal
  */
+export { Await } from "./Await";
 export { BlockQuote } from "./BlockQuote";
 export { Bold } from "./Bold";
 export { CodeBlock } from "./CodeBlock";

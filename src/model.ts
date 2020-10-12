@@ -2,23 +2,38 @@
 export const MdFragmentType = "mdFragment" as const;
 
 /** @internal */
-export interface MdFunctionElement<Props = unknown> {
-  type: Component<Props>;
+export const MdAwaitType = "mdAwait" as const;
+
+/** @internal */
+interface MdElement<Type, Props = unknown> {
+  type: Type;
   props: Props;
   key: string | number | null;
 }
 
 /** @internal */
-export interface MdFragmentElement {
-  type: typeof MdFragmentType;
-  props: PropsWithChildren;
-  key: string | number | null;
-}
+export type MdFunctionElement<Props = unknown> = MdElement<
+  Component<Props>,
+  Props
+>;
+
+/** @internal */
+export type MdFragmentElement = MdElement<
+  typeof MdFragmentType,
+  PropsWithChildren
+>;
+
+/** @internal */
+export type MdAwaitElement = MdElement<
+  typeof MdAwaitType,
+  PropsWithChildren<unknown, Promise<MarkdownChildren>>
+>;
 
 /** Internal representation of markdown before rendering. */
 export type MarkdownElement<Props = unknown> =
   | MdFunctionElement<Props>
-  | MdFragmentElement;
+  | MdFragmentElement
+  | MdAwaitElement;
 
 /** Primitive text types that get converted into text. */
 export type MarkdownText = string | number;
@@ -34,9 +49,10 @@ export type MarkdownChildren = MarkdownNode | MarkdownChildren[];
 
 /** Helper type for creating Elements that accept other markdown as children. */
 export type PropsWithChildren<
-  AdditionalProps extends unknown = unknown
+  AdditionalProps extends unknown = unknown,
+  Children = MarkdownChildren
 > = AdditionalProps & {
-  children?: MarkdownChildren;
+  children?: Children;
 };
 
 /** A functional component that creates Markdown elements. */

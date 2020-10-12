@@ -1,15 +1,19 @@
 import { MarkdownChildren, MarkdownElement } from "./model";
-import { synchronousRenderFunctions } from "./renderFunctions";
+import { renderFunctions } from "./renderFunctions";
 
 /** @internal */
-function renderNode(element: MarkdownChildren): string {
-  const results = synchronousRenderFunctions
-    .map((renderFunction) => renderFunction(element, renderNode))
-    .filter((result) => result !== null) as string[];
+async function renderNode(element: MarkdownChildren): Promise<string> {
+  const resolvedElement = await Promise.resolve(element);
+  const promises = renderFunctions.map((renderFunction) =>
+    renderFunction(resolvedElement, renderNode)
+  );
+  const results = (await Promise.all(promises)).filter(
+    (result) => result !== null
+  );
   if (results.length === 0) {
     throw new Error("Invalid element");
   }
-  return results[0];
+  return results[0] as string;
 }
 
 /** Renders a markdown element into text. */

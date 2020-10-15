@@ -1,5 +1,6 @@
 import { MdAwaitElement, MdAwaitType } from "../model";
 
+/** @internal */
 export function isMdAwaitElement(
   /* eslint-disable @typescript-eslint/no-explicit-any */
   /* eslint-disable @typescript-eslint/explicit-module-boundary-types */

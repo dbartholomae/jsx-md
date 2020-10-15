@@ -26,7 +26,7 @@ export type MdFragmentElement = MdElement<
 /** @internal */
 export type MdAwaitElement = MdElement<
   typeof MdAwaitType,
-  PropsWithChildren<unknown, Promise<MarkdownChildren>>
+  { children: Promise<MarkdownChildren> }
 >;
 
 /** Internal representation of markdown before rendering. */
@@ -49,10 +49,9 @@ export type MarkdownChildren = MarkdownNode | MarkdownChildren[];
 
 /** Helper type for creating Elements that accept other markdown as children. */
 export type PropsWithChildren<
-  AdditionalProps extends unknown = unknown,
-  Children = MarkdownChildren
+  AdditionalProps extends unknown = unknown
 > = AdditionalProps & {
-  children?: Children;
+  children?: MarkdownChildren;
 };
 
 /** A functional component that creates Markdown elements. */

@@ -6,7 +6,6 @@ export { Await } from "./Await";
 export { BlockQuote } from "./BlockQuote";
 export { Bold } from "./Bold";
 export { CodeBlock } from "./CodeBlock";
-export { Emphasis } from "./Emphasis";
 export { Fragment } from "./Fragment";
 export { Heading } from "./Heading";
 export { HorizontalRule } from "./HorizontalRule";

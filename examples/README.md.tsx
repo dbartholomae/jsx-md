@@ -86,7 +86,7 @@ writeFileSync("README.md", render(<Readme />));`}
 );
 
 async function createReadme() {
-  writeFileSync("examples/README.md", await render(<Readme />));
+  writeFileSync("test/README.md", await render(<Readme />));
 }
 
 createReadme();

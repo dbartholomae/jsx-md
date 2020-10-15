@@ -16,5 +16,6 @@
     "resolveJsonModule": true,
     "strict": true
   },
-  "include": ["**/*"]
+  "include": ["**/*"],
+  "exclude": ["lib/**/*"]
 }

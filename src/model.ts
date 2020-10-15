@@ -12,10 +12,8 @@ interface MdElement<Type, Props = unknown> {
 }
 
 /** @internal */
-export type MdFunctionElement<Props = unknown> = MdElement<
-  Component<Props>,
-  Props
->;
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+export type MdFunctionElement<Props = any> = MdElement<Component<Props>, Props>;
 
 /** @internal */
 export type MdFragmentElement = MdElement<
@@ -60,15 +58,17 @@ export type Component<ComponentProps extends unknown = unknown> = (
 ) => MarkdownElement | null;
 
 /** @internal */
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 declare global {
-  /* eslint-disable @typescript-eslint/no-namespace */
+  /* eslint-disable-next-line @typescript-eslint/no-namespace */
   namespace JSX {
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     interface IntrinsicElements {
       mdFragment: {
         children?: MarkdownChildren;
       };
       mdAwait: {
-        children?: Promise<MarkdownChildren>;
+        children?: Promise<MdFunctionElement>;
       };
     }
   }

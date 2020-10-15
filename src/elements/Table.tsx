@@ -72,6 +72,7 @@ function sortKeysInOrderOf<Obj extends Record<string, unknown>>(
   return (obj: Obj) =>
     keys.reduce((bodyAccumulator, header) => {
       /* istanbul ignore next */
+      /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
       const { [header]: _omitted, ...bodyWithoutHeader } = bodyAccumulator;
       return {
         ...bodyWithoutHeader,

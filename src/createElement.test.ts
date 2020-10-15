@@ -1,5 +1,5 @@
 import { createElement } from "./createElement";
-import { Await, MdAwaitType } from ".";
+import { MdAwaitType } from ".";
 
 describe("createElement", () => {
   it("throws an error if a lower-case component is used", () => {

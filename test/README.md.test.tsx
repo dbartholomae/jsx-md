@@ -1,8 +1,11 @@
 import * as fs from "fs";
-import "../examples/README.md.tsx";
+import { runTypeScriptFile } from "./utils/runTypeScriptFile";
 
 describe("README creation script", () => {
   it("creates the README file of the repo", async () => {
+    const scriptPath = "./examples/README.md.tsx";
+    await runTypeScriptFile(scriptPath);
+
     const expectedFile = fs.readFileSync("./test/README.expected.md", {
       encoding: "utf8",
     });
@@ -10,5 +13,5 @@ describe("README creation script", () => {
       encoding: "utf8",
     });
     expect(actualFile).toBe(expectedFile);
-  });
+  }, 25000);
 });

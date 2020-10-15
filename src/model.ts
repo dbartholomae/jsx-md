@@ -59,3 +59,18 @@ export type PropsWithChildren<
 export type Component<ComponentProps extends unknown = unknown> = (
   props: ComponentProps
 ) => MarkdownElement | null;
+
+/** @internal */
+declare global {
+  /* eslint-disable @typescript-eslint/no-namespace */
+  namespace JSX {
+    interface IntrinsicElements {
+      mdFragment: {
+        children?: MarkdownChildren;
+      };
+      mdAwait: {
+        children?: Promise<MarkdownChildren>;
+      };
+    }
+  }
+}

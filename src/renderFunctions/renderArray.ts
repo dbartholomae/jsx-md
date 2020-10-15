@@ -4,10 +4,9 @@
  */
 import { RenderFunction } from "./RenderFunction";
 
-export const renderArray: RenderFunction = (element, renderer) =>
+export const renderArray: RenderFunction = async (element, renderer) =>
   Array.isArray(element)
-    ? element
-        .map((el) => renderer(el))
-        .filter((el) => el !== null)
-        .join("")
+    ? Promise.all(element.map((el) => renderer(el)))
+        .then((results) => results.filter((el) => el !== null))
+        .then((results) => results.join(""))
     : null;

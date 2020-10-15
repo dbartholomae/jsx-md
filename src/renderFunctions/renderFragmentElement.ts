@@ -5,5 +5,10 @@
 import { isMdFragmentElement } from "../util/isMdFragmentElement";
 import { RenderFunction } from "./RenderFunction";
 
-export const renderFragmentElement: RenderFunction = (element, renderer) =>
-  isMdFragmentElement(element) ? renderer(element.props.children) : null;
+export const renderFragmentElement: RenderFunction = async (
+  element,
+  renderer
+) =>
+  isMdFragmentElement(element)
+    ? Promise.resolve(renderer(element.props.children))
+    : null;

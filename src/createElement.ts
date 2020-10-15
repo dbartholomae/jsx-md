@@ -7,7 +7,10 @@ import {
   MarkdownElement,
   MarkdownNode,
   MdFragmentType,
+  MdAwaitType,
 } from "./model";
+
+import { Await } from ".";
 
 export function createElement(
   component: Component,
@@ -20,16 +23,36 @@ export function createElement(
   ...children: MarkdownNode[]
 ): MarkdownNode | MarkdownNode[];
 export function createElement(
-  typeOrComponent: string | Component,
+  component: typeof Await,
+  attributes: null,
+  ...children: Promise<MarkdownNode[]>[]
+): MarkdownNode | MarkdownNode[];
+export function createElement(
+  typeOrComponent: string | Component | typeof Await,
   attributes: Record<string, unknown> | null,
-  ...children: MarkdownNode[]
+  ...children: MarkdownNode[] | Promise<MarkdownNode[]>[]
 ): MarkdownElement {
   if (typeOrComponent === MdFragmentType) {
-    return createFragmentElement(children);
+    return createFragmentElement(children as MarkdownNode[]);
+  }
+
+  if (typeOrComponent === Await) {
+    const promises = children.flat();
+    // Throws error if is it not exactly one children.
+    if (promises.length !== 1) {
+      throw new TypeError(
+        `<Await> expected to receive a single promise that resolves to any markdown children.`
+      );
+    }
+    return createPromiseElement(promises[0] as Promise<MarkdownNode[]>);
   }
 
   if (typeof typeOrComponent === "function") {
-    return createComponentElement(typeOrComponent, attributes, children);
+    return createComponentElement(
+      typeOrComponent as Component,
+      attributes,
+      children as MarkdownNode[]
+    );
   }
 
   throw new TypeError(
@@ -39,11 +62,21 @@ export function createElement(
 
 function createFragmentElement(children: MarkdownNode[]): MarkdownElement {
   return {
+    type: MdFragmentType,
     props: {
       children: children.flat(),
     },
     key: null,
-    type: MdFragmentType,
+  };
+}
+
+function createPromiseElement(
+  children: Promise<MarkdownNode[]>
+): MarkdownElement {
+  return {
+    type: MdAwaitType,
+    props: { children },
+    key: null,
   };
 }
 

@@ -1,5 +1,5 @@
 /* @jsx MD */
-import MD, { Component, Text, Await } from ".";
+import MD, { Component, Text } from ".";
 import { render } from "./render";
 
 describe("render", () => {
@@ -33,12 +33,14 @@ describe("render", () => {
   });
 
   it("throws an error when rendering a promise that rejects with an error", async () => {
-    await expect(render(<Await>{Promise.reject("invalid")}</Await>)).toReject();
+    await expect(
+      render(<mdAwait>{Promise.reject("invalid")}</mdAwait>)
+    ).toReject();
   });
 
   it("renders a promise that resolves to a nested component to its content", async () => {
     expect(
-      await render(<Await>{Promise.resolve(<Text>Content</Text>)}</Await>)
+      await render(<mdAwait>{Promise.resolve(<Text>Content</Text>)}</mdAwait>)
     ).toBe("Content");
   });
 
@@ -46,7 +48,7 @@ describe("render", () => {
     const TestComponent: Component = () => <Text>Content</Text>;
 
     expect(
-      await render(<Await>{Promise.resolve(<TestComponent />)}</Await>)
+      await render(<mdAwait>{Promise.resolve(<TestComponent />)}</mdAwait>)
     ).toBe("Content");
   });
 
@@ -57,7 +59,7 @@ describe("render", () => {
     );
     expect(
       await render(
-        <Await>{Promise.resolve(<TestComponent attribute="Test" />)}</Await>
+        <mdAwait>{Promise.resolve(<TestComponent attribute="Test" />)}</mdAwait>
       )
     ).toBe("Test");
   });

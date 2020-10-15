@@ -9,6 +9,11 @@ describe("awaitComponent", () => {
     expect(await render(<AsyncText />)).toEqual("Test");
   });
 
+  it("renders an async component resolving to null", async () => {
+    const AsyncText: Component = awaitComponent(async () => null);
+    expect(await render(<AsyncText />)).toEqual("");
+  });
+
   it("passes through all props", async () => {
     interface Props {
       children: string;

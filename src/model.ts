@@ -68,7 +68,8 @@ declare global {
         children?: MarkdownChildren;
       };
       mdAwait: {
-        children?: Promise<MdFunctionElement>;
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        children?: Promise<MarkdownElement<any> | null>;
       };
     }
   }

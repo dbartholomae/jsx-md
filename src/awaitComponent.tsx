@@ -1,5 +1,5 @@
 /* @jsx MD */
-import MD, { Component, MdFunctionElement } from ".";
+import MD, { Component, MarkdownElement } from ".";
 
 /**
  * Wraps a function that returns a promise to be a valid component
@@ -14,7 +14,7 @@ import MD, { Component, MdFunctionElement } from ".";
  *   ```
  */
 export function awaitComponent<Props>(
-  componentFn: (props: Props) => Promise<MdFunctionElement<Props>>
+  componentFn: (props: Props) => Promise<MarkdownElement<Props> | null>
 ): Component<Props> {
   /* eslint-disable-next-line react/display-name */
   return (props: Props) => <mdAwait>{componentFn(props)}</mdAwait>;

@@ -3,9 +3,8 @@ import { renderFunctions } from "./renderFunctions";
 
 /** @internal */
 async function renderNode(element: MarkdownChildren): Promise<string> {
-  const resolvedElement = await Promise.resolve(element);
   const promises = renderFunctions.map((renderFunction) =>
-    renderFunction(resolvedElement, renderNode)
+    renderFunction(element, renderNode)
   );
   const results = (await Promise.all(promises)).filter(
     (result) => result !== null

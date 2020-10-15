@@ -1,6 +1,10 @@
 /* @jsx MD */
-import MD, { Component, PropsWithChildren } from "..";
-import { MarkdownChildren } from "../model";
+import MD, { Component, MarkdownChildren } from "..";
+
+/** @internal */
+interface Props {
+  children: Promise<MarkdownChildren>;
+}
 
 /**
  * Renders a single promise that resolves to a group of tags to markdown asynchronously.
@@ -12,7 +16,6 @@ import { MarkdownChildren } from "../model";
  *   `Hello`
  *   ```
  */
-export const Await: Component<PropsWithChildren<
-  unknown,
-  Promise<MarkdownChildren>
->> = ({ children }) => <mdAwait>{children}</mdAwait>;
+export const Await: Component<Props> = ({ children }) => (
+  <mdAwait>{children}</mdAwait>
+);

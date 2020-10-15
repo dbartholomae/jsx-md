@@ -8,43 +8,41 @@ import {
   MarkdownNode,
   MdFragmentType,
   MdAwaitType,
+  MarkdownChildren,
 } from "./model";
-
-import { Await } from ".";
 
 export function createElement(
   component: Component,
   attributes: Record<string, unknown> | null,
-  ...children: MarkdownNode[]
-): MarkdownNode | MarkdownNode[];
+  ...children: MarkdownChildren[]
+): MarkdownElement;
 export function createElement(
-  nodeType: string,
+  nodeType: typeof MdFragmentType,
   attributes: null,
-  ...children: MarkdownNode[]
-): MarkdownNode | MarkdownNode[];
+  ...children: MarkdownChildren[]
+): MarkdownElement;
 export function createElement(
-  component: typeof Await,
+  nodeType: typeof MdAwaitType,
   attributes: null,
-  ...children: Promise<MarkdownNode[]>[]
-): MarkdownNode | MarkdownNode[];
+  children: Promise<MarkdownChildren>
+): MarkdownElement;
 export function createElement(
-  typeOrComponent: string | Component | typeof Await,
+  typeOrComponent: string | Component,
   attributes: Record<string, unknown> | null,
-  ...children: MarkdownNode[] | Promise<MarkdownNode[]>[]
+  ...children: MarkdownChildren[] | Promise<MarkdownChildren>[]
 ): MarkdownElement {
   if (typeOrComponent === MdFragmentType) {
     return createFragmentElement(children as MarkdownNode[]);
   }
 
-  if (typeOrComponent === Await) {
-    const promises = children.flat();
+  if (typeOrComponent === MdAwaitType) {
     // Throws error if is it not exactly one children.
-    if (promises.length !== 1) {
+    if (children.length !== 1) {
       throw new TypeError(
-        `<Await> expected to receive a single promise that resolves to any markdown children.`
+        `Received ${children.length} promises, expected a single promise.`
       );
     }
-    return createPromiseElement(promises[0] as Promise<MarkdownNode[]>);
+    return createPromiseElement(children[0] as Promise<MarkdownChildren>);
   }
 
   if (typeof typeOrComponent === "function") {
@@ -71,7 +69,7 @@ function createFragmentElement(children: MarkdownNode[]): MarkdownElement {
 }
 
 function createPromiseElement(
-  children: Promise<MarkdownNode[]>
+  children: Promise<MarkdownChildren>
 ): MarkdownElement {
   return {
     type: MdAwaitType,

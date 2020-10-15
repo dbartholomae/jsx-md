@@ -9,19 +9,22 @@ describe("createElement", () => {
     );
   });
 
-  it("throws an error if a multiple children detected for promise element", () => {
+  it("throws an error if md-await has multiple children", () => {
     expect(() =>
-      // @ts-expect-error - await element test multiple promises as children
-      createElement(Await, {}, Promise.resolve("Test"), Promise.resolve("Test"))
-    ).toThrowError(
-      "<Await> expected to receive a single promise that resolves to any markdown children."
-    );
+      createElement(
+        // @ts-expect-error - await element test multiple promises as children
+        MdAwaitType,
+        {},
+        Promise.resolve("Test"),
+        Promise.resolve("Test")
+      )
+    ).toThrowError("Received 2 promises, expected a single promise.");
   });
 
   it("creates a await element if a single promise is used", () => {
     expect(
       // @ts-expect-error - await element test single promise as children
-      createElement(Await, {}, Promise.resolve("Test"))
+      createElement(MdAwaitType, {}, Promise.resolve("Test"))
     ).toMatchObject({
       key: null,
       props: { children: Promise.resolve("Test") },

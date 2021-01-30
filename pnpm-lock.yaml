@@ -23,9 +23,9 @@ devDependencies:
   ts-jest: 26.2.0_jest@26.4.2+typescript@4.0.2
   ts-node: 9.0.0_typescript@4.0.2
   tslib: 2.0.1
-  typedoc: 0.20.15_typescript@4.0.2
-  typedoc-plugin-param-names: 2.0.0_typedoc@0.20.15
-  typedoc-plugin-sourcefile-url: 1.0.6_typedoc@0.20.15
+  typedoc: 0.20.16_typescript@4.0.2
+  typedoc-plugin-param-names: 2.0.0_typedoc@0.20.16
+  typedoc-plugin-sourcefile-url: 1.0.6_typedoc@0.20.16
   typescript: 4.0.2
 lockfileVersion: 5.2
 packages:
@@ -6859,9 +6859,9 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-JQ2O9laZ/EhfWUWYp/8EyuShYhtXLhIa6DU8eZNUfaurMhEgKdffbadKNv6HMmTfOxAcgiePg06OCxNX8EyP3g==
-  /typedoc-plugin-param-names/2.0.0_typedoc@0.20.15:
+  /typedoc-plugin-param-names/2.0.0_typedoc@0.20.16:
     dependencies:
-      typedoc: 0.20.15_typescript@4.0.2
+      typedoc: 0.20.16_typescript@4.0.2
     dev: true
     engines:
       node: '>=12'
@@ -6869,15 +6869,15 @@ packages:
       typedoc: '>=0.15.5 <0.21'
     resolution:
       integrity: sha512-Uf9otc8n9U8J9R2edtNowehLWK4oBD17ckVX/c0uCky254k2vrvZ5CvpRBHwLm+EpMRK+IVzYbiLxNSG4JXRsA==
-  /typedoc-plugin-sourcefile-url/1.0.6_typedoc@0.20.15:
+  /typedoc-plugin-sourcefile-url/1.0.6_typedoc@0.20.16:
     dependencies:
-      typedoc: 0.20.15_typescript@4.0.2
+      typedoc: 0.20.16_typescript@4.0.2
     dev: true
     peerDependencies:
       typedoc: '>=0.16.0'
     resolution:
       integrity: sha512-xHq9DzkoQywS7FyPneMm2/Hr9GRoCpjSQXkVN0W6SCJKP7fguqg2tasgh+8l5/mW6YSYvqCqEbkSYLbuD4Y6gA==
-  /typedoc/0.20.15_typescript@4.0.2:
+  /typedoc/0.20.16_typescript@4.0.2:
     dependencies:
       colors: 1.4.0
       fs-extra: 9.0.1
@@ -6898,7 +6898,7 @@ packages:
     peerDependencies:
       typescript: 3.9.x || 4.0.x || 4.1.x
     resolution:
-      integrity: sha512-z3Hf0HLJXdsPiWQT+HDv0kOJAagGu6qEOexHpi9xQNlMFBR5y6UjBAmIfoKTo/vBtSM59tP2ebX1dA3i/p2mrQ==
+      integrity: sha512-xqIL8lT6ZE3QpP0GN30ckeTR05NSEkrP2pXQlNhC0OFkbvnjqJtDUcWSmCO15BuYyu4qsEbZT+tKYFEAt9Jxew==
   /typescript/4.0.2:
     dev: true
     engines:
@@ -7270,7 +7270,7 @@ specifiers:
   ts-jest: ^26.2.0
   ts-node: ^9.0.0
   tslib: ^2.0.1
-  typedoc: 0.20.15
+  typedoc: 0.20.16
   typedoc-plugin-param-names: ^2.0.0
   typedoc-plugin-sourcefile-url: ^1.0.6
   typescript: ^4.0.2

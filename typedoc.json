@@ -1,6 +1,6 @@
 {
   "entryPoints": ["./src/index.ts"],
-  "param-name": "props",
+  "namedParamName": "props",
   "plugin": ["typedoc-plugin-param-names", "typedoc-plugin-sourcefile-url"],
   "tsconfig": "./tsconfig.docs.json",
   "sourcefile-url-prefix": "https://github.com/dbartholomae/jsx-md/blob/main/src/"

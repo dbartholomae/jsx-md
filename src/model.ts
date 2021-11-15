@@ -47,13 +47,13 @@ export type MarkdownChildren = MarkdownNode | MarkdownChildren[];
 
 /** Helper type for creating Elements that accept other markdown as children. */
 export type PropsWithChildren<
-  AdditionalProps extends unknown = unknown
+  AdditionalProps = unknown
 > = AdditionalProps & {
   children?: MarkdownChildren;
 };
 
 /** A functional component that creates Markdown elements. */
-export type Component<ComponentProps extends unknown = unknown> = (
+export type Component<ComponentProps = unknown> = (
   props: ComponentProps
 ) => MarkdownElement | null;
 

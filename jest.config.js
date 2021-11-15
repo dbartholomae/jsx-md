@@ -14,7 +14,7 @@ module.exports = {
       statements: 100,
     },
   },
-  setupFilesAfterEnv: ["jest-extended"],
+  setupFilesAfterEnv: ["jest-extended/all"],
   testRegex: ".*test\\.(t|j)sx?$",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
 };

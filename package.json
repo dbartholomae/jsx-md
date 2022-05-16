@@ -30,7 +30,7 @@
   "repository": "git@github.com:dbartholomae/jsx-md.git",
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
-    "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.0",
     "@semantic-release/github": "^8.0.0",

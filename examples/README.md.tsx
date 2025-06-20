@@ -10,7 +10,7 @@ import MD, {
   render,
   Text,
 } from "../src";
-import { writeFileSync } from "fs";
+import { writeFileSync } from "node:fs";
 import pkg from "../package.json";
 
 const Readme: Component = () => (

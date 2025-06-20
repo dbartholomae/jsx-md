@@ -11,19 +11,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - name: Lint commit messages
-      uses: wagoid/commitlint-github-action@v2
+      uses: wagoid/commitlint-github-action@v5
     - name: Setup Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
-        node-version: 12.x
+        node-version: 22.x
     - name: Setup pnpm
-      uses: pnpm/action-setup@v1.2.1
+      uses: pnpm/action-setup@v2
       with:
-        version: ^5.5.4
+        version: ^10.11.0
     - name: Install
       run: pnpm install --frozen-lockfile=false
     - name: Build
@@ -35,7 +35,7 @@ jobs:
     - name: Build documentation
       run: pnpm run docs
     - name: Upload code coverage to codecov
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v3
 
   publish:
     needs: build
@@ -43,15 +43,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Setup Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
-        node-version: 12.x
+        node-version: 22.x
     - name: Setup pnpm
-      uses: pnpm/action-setup@v1.2.1
+      uses: pnpm/action-setup@v2
       with:
-        version: ^5.5.4
+        version: ^10.11.0
     - name: Install
       run: pnpm install --frozen-lockfile=false
     - name: Build
@@ -67,7 +67,7 @@ jobs:
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     - name: Publish
-      uses: cycjimmy/semantic-release-action@v2
+      uses: cycjimmy/semantic-release-action@v4
       with:
         semantic_version: 17
         branches: main

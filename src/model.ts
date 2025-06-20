@@ -8,7 +8,7 @@ export const MdAwaitType = "mdAwait" as const;
 interface MdElement<Type, Props = unknown> {
   type: Type;
   props: Props;
-  key: string | number | null;
+  key: string | null;
 }
 
 /** @internal */
